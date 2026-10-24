@@ -20,10 +20,10 @@ All referral links use their full, unshortened URLs and carry `rel="sponsored"`.
 `sitemap.xml` and `robots.txt` use the placeholder domain:
 
 ```
-https://mrwealthwavecapital.github.io/affiliate-hub/
+https://mrwealthwavecapital.github.io/Affiliate-hub/
 ```
 
-Replace `mrwealthwavecapital.github.io/affiliate-hub` with the real GitHub Pages URL (your GitHub username + repo name, e.g. `https://YOURUSERNAME.github.io/affiliate-hub/`) in **both** files before pushing, or search engines will be pointed at a domain that does not exist. The HTML pages themselves use relative links, so they do not need domain changes.
+Replace `mrwealthwavecapital.github.io/Affiliate-hub` with the real GitHub Pages URL (your GitHub username + repo name, e.g. `https://YOURUSERNAME.github.io/Affiliate-hub/`) in **both** files before pushing, or search engines will be pointed at a domain that does not exist. The HTML pages themselves use relative links, so they do not need domain changes.
 
 No fifth referral program is included in this mirror — only the four programs listed above.
 
@@ -51,7 +51,7 @@ No fifth referral program is included in this mirror — only the four programs 
    - Wait for GitHub to build the site, then open the Pages URL shown in Settings → Pages to confirm it loads.
 
 4. **Replace the placeholder domain (if you have not already).**
-   - Edit `sitemap.xml` and `robots.txt` so every `mrwealthwavecapital.github.io/affiliate-hub` URL uses the real Pages URL, commit, and push again.
+   - Edit `sitemap.xml` and `robots.txt` so every `mrwealthwavecapital.github.io/Affiliate-hub` URL uses the real Pages URL, commit, and push again.
 
 5. **Verify in Google Search Console.**
    - Go to Google Search Console → Add property → URL prefix → enter the real Pages URL.
