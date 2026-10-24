@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mrwealthwavecapital.github.io/affiliate-hub/sitemap.xml
