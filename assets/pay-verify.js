@@ -25,20 +25,24 @@
  *  fails, the caller gets reason "rpc-unreachable" and the page points the
  *  buyer at Basescan as a manual fallback.
  *
- * AES DECRYPTION (settlement-tracker unlock only)
+ * AES DECRYPTION (pay-to-unlock pages)
  *  decryptBlob() decrypts an AES-256-GCM blob laid out as
  *  IV (12 bytes) || ciphertext || auth tag (16 bytes), with the key derived
- *  as SHA-256(KEY_SALT). KEY_SALT is a public constant: the key is NEVER
+ *  as SHA-256(salt). KEY_SALT below is the settlement-tracker product's
+ *  salt; other products pass their own salt — '<product-slug>-v1|' +
+ *  payee-lowercase, e.g. 'referral-cashout-tracker-v1|0x940d…' — as the
+ *  second argument to decryptBlob(blob, salt). The key is NEVER
  *  stored anywhere, it is derived at runtime — but anyone reading this file
- *  can derive it too. That is deliberate and documented: the AES layer is
- *  obfuscation (it keeps the raw spreadsheet out of the public repo and out
- *  of search indexes), NOT access control. A per-payment key derived from
- *  txHash + payer address is impossible in a purely static setting, because
- *  the file must be encrypted BEFORE any buyer or tx exists and a key that
- *  depends on a future, unknown transaction cannot decrypt a blob made
- *  today. The real gate is the on-chain verification (steps 1-5 above) plus
- *  the sender binding. A determined person can derive the key from this
- *  source and decrypt the blob without paying; that is stated on the page.
+ *  (or the page that names its salt) can derive it too. That is deliberate
+ *  and documented: the AES layer is obfuscation (it keeps the raw
+ *  spreadsheet out of the public repo and out of search indexes), NOT
+ *  access control. A per-payment key derived from txHash + payer address
+ *  is impossible in a purely static setting, because the file must be
+ *  encrypted BEFORE any buyer or tx exists and a key that depends on a
+ *  future, unknown transaction cannot decrypt a blob made today. The real
+ *  gate is the on-chain verification (steps 1-5 above) plus the sender
+ *  binding. A determined person can derive the key from this source and
+ *  decrypt the blob without paying; that is stated on every unlock page.
  *
  * USDC on Base: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913 (6 decimals).
  * Payee: 0x940Db7cF60E0DE63a5A6fBF3D06290f6e7744B2c
@@ -306,19 +310,20 @@
   }
 
   // AES-256-GCM decrypt via WebCrypto. blob layout: IV(12) || ciphertext || tag(16).
-  // Key = SHA-256(KEY_SALT). See the header comment: public derivation,
-  // obfuscation only — NOT access control.
-  function deriveKey() {
+  // Key = SHA-256(salt). salt defaults to KEY_SALT (the settlement-tracker
+  // product); other products pass their own '<slug>-v1|<payee>' salt.
+  // See the header comment: public derivation, obfuscation only — NOT access control.
+  function deriveKey(salt) {
     var subtle = (global.crypto && global.crypto.subtle) ||
       (global.window && global.window.crypto && global.window.crypto.subtle);
     if (!subtle) return Promise.reject(new Error('WebCrypto is not available in this browser.'));
-    var data = new TextEncoder().encode(KEY_SALT);
+    var data = new TextEncoder().encode(salt || KEY_SALT);
     return subtle.digest('SHA-256', data).then(function (hash) {
       return subtle.importKey('raw', hash, { name: 'AES-GCM' }, false, ['decrypt']);
     });
   }
 
-  function decryptBlob(arrayBuffer) {
+  function decryptBlob(arrayBuffer, salt) {
     var bytes = new Uint8Array(arrayBuffer);
     if (bytes.length < 12 + 16 + 1) {
       return Promise.reject(new Error('Downloaded file is too short to be a valid encrypted blob.'));
@@ -328,7 +333,7 @@
     var subtle = (global.crypto && global.crypto.subtle) ||
       (global.window && global.window.crypto && global.window.crypto.subtle);
     if (!subtle) return Promise.reject(new Error('WebCrypto is not available in this browser.'));
-    return deriveKey().then(function (key) {
+    return deriveKey(salt).then(function (key) {
       return subtle.decrypt({ name: 'AES-GCM', iv: iv }, key, ct);
     });
   }
