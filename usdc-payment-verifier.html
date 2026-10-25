@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>USDC Payment Verifier — check any USDC transfer on Base or BSC (free)</title>
+<meta name="description" content="Free USDC payment checker: paste any transaction hash, pick Base or BSC, and see the USDC amount, sender, and recipient straight from the chain. A $0.01 USDC unlock downloads the full written verification report.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<nav aria-label="Site">
+<a href="index.html">Home</a>
+<a href="robinhood-referral.html">Robinhood Referral</a>
+<a href="webull-vs-robinhood.html">Webull vs Robinhood</a>
+<a href="underdog-california.html">Underdog in California</a>
+<a href="polymarket-credit.html">Polymarket Credit</a>
+<a href="prediction-markets-compared.html">Prediction Markets Compared</a>
+<a href="underdog-refer-a-friend.html">Underdog Refer-a-Friend</a>
+<a href="prediction-markets-beginners.html">Prediction Markets Beginners</a>
+<a href="free-offers-ranked.html">Free Offers Ranked</a>
+<a href="bounties.html">Live Agent Bounties</a>
+<a href="webull-referral-explained.html">Webull Referral Explained</a>
+<a href="polymarket-feeshare-vs-referral.html">Polymarket Fee-Share vs Referral</a>
+<a href="underdog-predict-explained.html">Underdog Predict Explained</a>
+<a href="cashout-calculator.html">Cash-Out Calculator</a>
+<a href="referral-estimator.html">Reward Estimator</a>
+<a href="settlement-check.html">Settlement Check</a>
+<a href="underdog-best-ball.html">Underdog Best Ball</a>
+<a href="referrals-to-100.html">Referrals to $100</a>
+<a href="referral-didnt-arrive.html">Bonus Didn't Arrive</a>
+<a href="robinhood-claim-steps.html">Robinhood Claim Steps</a>
+<a href="underdog-promo-code-vs-referral.html">Underdog Promo Code vs Referral</a>
+<a href="webull-referral-timing.html">Webull Referral Timing</a>
+<a href="referral-terms-unlock.html">Unlock: Referral Terms ($0.01)</a>
+<a href="deadlines-unlock.html">Unlock: Settlement Deadlines ($0.01)</a>
+<a href="unclaimed-unlock.html">Unlock: Unclaimed Property ($0.01)</a>
+<a href="settlement-tracker-unlock.html">Unlock: Settlement Tracker ($12)</a>
+<a href="referral-cashout-tracker-unlock.html">Unlock: Cash-Out Tracker ($19)</a>
+<a href="unclaimed-kit-unlock.html">Unlock: Unclaimed Property Kit ($15)</a>
+<a href="flapjax-verifier.html">FLAPJAX Payout Verifier</a>
+<a href="prediction-market-fee-calculator-unlock.html">Unlock: Fee Calculator ($15)</a>
+<a href="referral-link-audit-checklist-unlock.html">Unlock: Link Audit Checklist ($12)</a>
+<a href="freelance-rate-calculator-unlock.html">Unlock: Rate Calculator ($15)</a>
+<a href="referral-offers-honestly-unlock.html">Unlock: Referral Offers Guide ($19)</a>
+<a href="underdog-in-california-unlock.html">Unlock: Underdog in California ($15)</a>
+<a href="notion-referral-tracker-unlock.html">Unlock: Notion Tracker ($19)</a>
+<a href="flapjax-q43-dataset-unlock.html">Unlock: FLAPJAX Q43 Dataset ($0.01)</a>
+
+<a href="referral-terms-cheatsheet-unlock.html">Unlock: Referral Terms Cheat Sheet ($9)</a>
+<a href="settlement-deadlines-2026-unlock.html">Unlock: Settlement Deadlines 2026 ($12)</a>
+<a href="agent-bounty-tracker-unlock.html">Unlock: Bounty Earnings Tracker ($12)</a>
+<a href="flapjax-payout-real.html">Is a FLAPJAX Payout Real?</a>
+<a href="robinhood-bonus-not-received.html">Robinhood Bonus Not Received?</a>
+<a href="unclaimed-property-california.html">Unclaimed Property in California</a>
+
+<a href="prediction-markets-guide-unlock.html">Unlock: Prediction Markets Compared Guide ($12)</a>
+<a href="verify-token-payout-unlock.html">Unlock: How to Verify Any Token Payout ($9)</a>
+<a href="agent-bounty-directory-unlock.html">Unlock: Agent Bounty Board Directory ($9)</a>
+<a href="bsc-holder-snapshot.html">BSC Token Holder Snapshot (free tool)</a>
+<a href="solana-wallet-snapshot.html">Solana Wallet Snapshot (free tool)</a>
+<a href="polymarket-10000-catch.html">Polymarket Referral: The $10,000 Catch</a>
+<a href="underdog-bonus-entries-expiring.html">Underdog Bonus Entries Expiring?</a>
+
+<a href="base-wallet-snapshot.html">Base Wallet Snapshot (free tool)</a>
+<a href="usdc-payment-verifier.html">USDC Payment Verifier (free tool)</a>
+<a href="webull-100-deposit-rule.html">Webull: The $100 Deposit Rule</a>
+<a href="robinhood-bonus-timing.html">Robinhood Bonus: How Long Does It Take?</a>
+<a href="flapjax-reconciliation-playbook-unlock.html">Unlock: FLAPJAX Reconciliation Playbook ($9)</a>
+</nav>
+</header>
+<main>
+<div class="disclosure" role="note">
+<p><strong>Disclosure:</strong> This is a free on-chain reader, not an endorsement of USDC or of any payment, and not financial advice. It reads public chain data only. The full written report below costs $0.01 USDC.</p>
+</div>
+
+<section>
+<h2>What this checks</h2>
+<p>Paste any transaction hash and pick the chain — Base or BNB Smart Chain. This tool reads the transaction receipt straight from that chain's public RPCs and checks:</p>
+<ul>
+<li><strong>Status</strong> — whether the transaction succeeded or reverted.</li>
+<li><strong>USDC transfers</strong> — every USDC Transfer log in the receipt: sender, recipient, and amount. Base USDC is <code>0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913</code> (6 decimals); BSC USDC is <code>0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d</code> (18 decimals). Both contracts were verified live before this page was published: each has contract code and <code>decimals()</code> returns the value shown.</li>
+<li><strong>Match (optional)</strong> — if you also paste the recipient and amount you expected, the tool marks each field MATCH or MISMATCH, the same four-field check used in the FlapJax payout audits.</li>
+<li><strong>Block and timestamp</strong> — when the payment landed.</li>
+</ul>
+<p><strong>Verified reference data</strong> (checked live from public Base RPCs, October 25, 2026): transaction <code>0x2bc393900d387feaa7c201e828f70f67ed523dcc7ca19cb689156d76ca846d6f</code> at block 53,087,831 is a real USDC payment — status success, exactly one USDC Transfer log, 0.02 USDC from <code>0xc4b4b5eb3eed55f9fcfa62e672dc37b4156382eb</code> to <code>0x7284d41b5b852f2bd4c99bdf95043d84452d299c</code>, sent by <code>0xb87e1a2cc2b4643f2892768e80e41167f17c5860</code>. The example button below loads that transaction. It is one of 681 USDC transfers in a 10-block window — USDC moves constantly on Base, so a single transfer proves a payment happened, not that the sender is trustworthy.</p>
+<p class="hint"><strong>What it cannot check:</strong> whether the payment was for what someone said it was for. This tool reads the chain: it proves a USDC amount moved from one address to another. It cannot read a receipt comment, a bounty post, or a chat message, so it cannot confirm that the payment matches a promise — compare the sender, recipient, and amount yourself against the claim. If a transaction has no USDC Transfer log at all, it is not a USDC payment, whatever anyone said about it.</p>
+</section>
+
+<section class="tool-box" aria-label="Check a USDC payment">
+<h2>Check a USDC payment — free</h2>
+<div class="field-row">
+<label for="chain"><strong>Chain</strong></label><br>
+<select id="chain" style="padding:0.5rem 0.6rem;border:1px solid #b9c2cc;border-radius:8px;font:inherit;">
+<option value="base" selected>Base</option>
+<option value="bsc">BNB Smart Chain (BSC)</option>
+</select>
+</div>
+<div class="field-row">
+<label for="usdc-txhash"><strong>Transaction hash</strong></label><br>
+<input type="text" id="usdc-txhash" placeholder="0x…" autocomplete="off" spellcheck="false" style="width:100%;box-sizing:border-box;padding:0.5rem 0.6rem;border:1px solid #b9c2cc;border-radius:8px;font:inherit;">
+</div>
+<div class="field-row">
+<label for="expected-to"><strong>Expected recipient (optional)</strong></label><br>
+<input type="text" id="expected-to" placeholder="0x… (leave blank to skip the match check)" autocomplete="off" spellcheck="false" style="width:100%;box-sizing:border-box;padding:0.5rem 0.6rem;border:1px solid #b9c2cc;border-radius:8px;font:inherit;">
+</div>
+<div class="field-row">
+<label for="expected-amount"><strong>Expected amount in USDC (optional)</strong></label><br>
+<input type="text" id="expected-amount" placeholder="e.g. 0.02 (leave blank to skip the match check)" autocomplete="off" spellcheck="false" style="width:100%;box-sizing:border-box;padding:0.5rem 0.6rem;border:1px solid #b9c2cc;border-radius:8px;font:inherit;">
+</div>
+<div class="buttons">
+<button type="button" id="check">Check payment</button>
+<button type="button" class="secondary" id="example">Try an example (real 0.02 USDC payment on Base, verified)</button>
+<button type="button" class="secondary" id="clear-check">Clear</button>
+</div>
+<p id="check-status" class="hint" hidden aria-live="polite"></p>
+<p id="check-error" class="error" hidden></p>
+<div id="check-result" hidden>
+<table id="result-table">
+<tbody id="result-body"></tbody>
+</table>
+<p id="verdict" class="match" hidden></p>
+<p class="hint">Confirm it yourself: <a id="explorer-tx" href="https://basescan.org" target="_blank" rel="noopener">open this transaction on the block explorer</a>.</p>
+</div>
+</section>
+<section class="tool-box" aria-label="Full written report">
+<h2>Full written report — $0.01 USDC on Base</h2>
+<p><strong>Price: $0.01 USDC</strong> (10,000 base units) on the Base network, sent to the address below. No account, no email, no KYC — the page checks your payment on the Base blockchain, then enables the report download.</p>
+<p>The report is a written markdown file for the check you just ran: every field the checker showed, the block, and the RPC used — the same format as the public FlapJax payout audits.</p>
+<p><strong>Pay to:</strong> <code id="payee">0x940Db7cF60E0DE63a5A6fBF3D06290f6e7744B2c</code>
+<button type="button" class="secondary" id="copy-payee">Copy address</button>
+<span id="copy-note" class="hint" hidden>Copied.</span></p>
+<ol>
+<li>Run a check above first (the report is written from that check).</li>
+<li>Send <strong>exactly $0.01 USDC on Base</strong> to the address above from any wallet. (Base network fees are a few cents of ETH — make sure you are on Base, not Ethereum mainnet.)</li>
+<li>Paste the Base transaction hash below and press <strong>Verify payment</strong>.</li>
+<li>When the page confirms the payment on-chain, the report download appears.</li>
+</ol>
+<div class="field-row">
+<label for="payhash"><strong>Base payment transaction hash ($0.01 USDC)</strong></label><br>
+<input type="text" id="payhash" placeholder="0x…" autocomplete="off" spellcheck="false" style="width:100%;box-sizing:border-box;padding:0.5rem 0.6rem;border:1px solid #b9c2cc;border-radius:8px;font:inherit;">
+</div>
+<div class="buttons">
+<button type="button" id="verify-pay">Verify payment</button>
+<button type="button" class="secondary" id="reset-pay">Clear</button>
+</div>
+<p id="pay-status" class="hint" hidden aria-live="polite"></p>
+<p id="pay-error" class="error" hidden></p>
+<p id="report-download" class="match" hidden><strong>Payment confirmed.</strong> <a href="#" id="report-link">Download the full report (.md)</a></p>
+<p class="hint">If the check fails, you can confirm the payment yourself: <a id="basescan-pay" href="https://basescan.org" target="_blank" rel="noopener">look the hash up on Basescan</a> and check that it sent at least $0.01 USDC to the address above. Underpaying, sending a different token, or sending on the wrong network will not unlock the report.</p>
+<p class="verify"><strong>Honest note about this gate:</strong> this is a light honesty gate. Your payment is verified on-chain and goes straight to the builder's wallet — but the report itself is generated in your browser from the same public chain data the free checker already shows above, so a determined person could write the same report without paying. That is the trade-off for having no accounts, no logins, and no middleman. What the $0.01 buys is the supported path: the verified payment and the formatted report file, ready to file or publish.</p>
+</section>
+
+</main>
+<footer>
+<p>Disclosure: I earn a commission if you sign up through my link. Offers checked October 2026; terms change — verify live terms before signing up.</p>
+<p><a href="index.html">Home</a> · <a href="robinhood-referral.html">Robinhood</a> · <a href="webull-vs-robinhood.html">Webull vs Robinhood</a> · <a href="underdog-california.html">Underdog in California</a> · <a href="polymarket-credit.html">Polymarket</a> · <a href="prediction-markets-compared.html">Prediction Markets Compared</a> · <a href="underdog-refer-a-friend.html">Underdog Refer-a-Friend</a> · <a href="prediction-markets-beginners.html">Prediction Markets Beginners</a> · <a href="free-offers-ranked.html">Free Offers Ranked</a> · <a href="bounties.html">Live Agent Bounties</a> · <a href="webull-referral-explained.html">Webull Referral</a> · <a href="polymarket-feeshare-vs-referral.html">Polymarket Fee-Share</a> · <a href="underdog-predict-explained.html">Underdog Predict</a> · <a href="cashout-calculator.html">Cash-Out Calculator</a> · <a href="referral-estimator.html">Reward Estimator</a> · <a href="settlement-check.html">Settlement Check</a> · <a href="underdog-best-ball.html">Best Ball</a> · <a href="referrals-to-100.html">Referrals to $100</a> · <a href="referral-didnt-arrive.html">Bonus Didn't Arrive</a> · <a href="robinhood-claim-steps.html">Robinhood Claim Steps</a> · <a href="underdog-promo-code-vs-referral.html">Underdog Promo Code vs Referral</a> · <a href="webull-referral-timing.html">Webull Referral Timing</a></p>
+</footer>
+<script src="assets/pay-verify.js"></script>
+<script>
+(function () {
+  var CHAINS = {
+    base: {
+      name: 'Base',
+      usdc: '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913',
+      decimals: 6,
+      explorer: 'https://basescan.org/tx/',
+      rpcs: [
+        'https://mainnet.base.org',
+        'https://base.publicnode.com',
+        'https://1rpc.io/base',
+        'https://base-mainnet.public.blastapi.io',
+        'https://base.meowrpc.com'
+      ]
+    },
+    bsc: {
+      name: 'BNB Smart Chain',
+      usdc: '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
+      decimals: 18,
+      explorer: 'https://bscscan.com/tx/',
+      rpcs: [
+        'https://bsc-dataseed.binance.org/',
+        'https://bsc-dataseed1.defibit.io/',
+        'https://bsc.publicnode.com',
+        'https://1rpc.io/bnb'
+      ]
+    }
+  };
+  var RPC_TIMEOUT_MS = 15000;
+  var TRANSFER_TOPIC0 = '0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef';
+  var EXAMPLE_TX = '0x2bc393900d387feaa7c201e828f70f67ed523dcc7ca19cb689156d76ca846d6f'; // 0.02 USDC on Base, block 53087831, verified Oct 25, 2026
+  var EXPECTED = 10000n; // $0.01 USDC, 6 decimals
+  var REPORT_FILENAME = 'usdc-payment-verification-report.md';
+
+  var chainEl = document.getElementById('chain');
+  var hashEl = document.getElementById('usdc-txhash');
+  var toEl = document.getElementById('expected-to');
+  var amtEl = document.getElementById('expected-amount');
+  var checkStatusEl = document.getElementById('check-status');
+  var checkErrorEl = document.getElementById('check-error');
+  var resultEl = document.getElementById('check-result');
+  var resultBody = document.getElementById('result-body');
+  var verdictEl = document.getElementById('verdict');
+  var payHashEl = document.getElementById('payhash');
+  var payStatusEl = document.getElementById('pay-status');
+  var payErrorEl = document.getElementById('pay-error');
+  var reportEl = document.getElementById('report-download');
+  var reportLink = document.getElementById('report-link');
+  var basescanPayEl = document.getElementById('basescan-pay');
+  var lastCheck = null;
+
+  function showCheckStatus(text, cls) {
+    checkStatusEl.textContent = text;
+    checkStatusEl.className = cls || 'hint';
+    checkStatusEl.hidden = false;
+  }
+  function showPayStatus(text, cls) {
+    payStatusEl.textContent = text;
+    payStatusEl.className = cls || 'hint';
+    payStatusEl.hidden = false;
+  }
+  function isValidTxHash(h) { return typeof h === 'string' && /^0x[0-9a-fA-F]{64}$/.test(h.trim()); }
+  function isAddress(a) { return typeof a === 'string' && /^0x[0-9a-fA-F]{40}$/.test(a.trim()); }
+  function hexToInt(h) { return parseInt(h, 16); }
+  function addrFromTopic(topic) { return '0x' + String(topic).slice(26).toLowerCase(); }
+  function fmtUsdc(raw, decimals) {
+    var n = BigInt(raw);
+    var d = BigInt(decimals);
+    var div = 10n ** d;
+    var whole = n / div;
+    var frac = n % div;
+    var fracStr = frac.toString().padStart(Number(d), '0').replace(/0+$/, '');
+    return whole.toString() + (fracStr ? '.' + fracStr : '') + ' USDC';
+  }
+  function parseAmountToRaw(str, decimals) {
+    var s = String(str).trim();
+    if (!/^[0-9]+(\.[0-9]+)?$/.test(s)) return null;
+    var parts = s.split('.');
+    var whole = BigInt(parts[0] || '0');
+    var fracStr = (parts[1] || '').padEnd(Number(decimals), '0').slice(0, Number(decimals));
+    return whole * (10n ** BigInt(decimals)) + BigInt(fracStr || '0');
+  }
+
+  function rpcCall(url, method, params) {
+    var controller;
+    var options = {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: method, params: params })
+    };
+    if (typeof AbortController !== 'undefined') {
+      controller = new AbortController();
+      options.signal = controller.signal;
+      setTimeout(function () { controller.abort(); }, RPC_TIMEOUT_MS);
+    }
+    return fetch(url, options).then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    }).then(function (json) {
+      if (json.error) throw new Error(json.error.message || 'RPC error');
+      return json.result;
+    });
+  }
+  function tryRpcs(rpcs, method, params) {
+    var errors = [];
+    var chain = Promise.reject(new Error('start'));
+    rpcs.forEach(function (url) {
+      chain = chain.catch(function () {
+        return rpcCall(url, method, params).then(function (result) {
+          return { result: result, rpc: url };
+        }).catch(function (e) {
+          errors.push(url + ': ' + (e && e.message ? e.message : String(e)));
+          throw e;
+        });
+      });
+    });
+    return chain.catch(function () {
+      throw new Error('All ' + method + ' RPCs failed: ' + errors.join(' | '));
+    });
+  }
+  function row(label, value, verdict) {
+    var tr = document.createElement('tr');
+    var td1 = document.createElement('td'); td1.textContent = label;
+    var td2 = document.createElement('td'); td2.textContent = value;
+    var td3 = document.createElement('td'); td3.textContent = verdict || '';
+    tr.appendChild(td1); tr.appendChild(td2); tr.appendChild(td3);
+    resultBody.appendChild(tr);
+  }
+
+  document.getElementById('example').addEventListener('click', function () {
+    chainEl.value = 'base';
+    hashEl.value = EXAMPLE_TX;
+    checkTx();
+  });
+  document.getElementById('clear-check').addEventListener('click', function () {
+    hashEl.value = ''; toEl.value = ''; amtEl.value = '';
+    checkStatusEl.hidden = true; checkErrorEl.hidden = true;
+    resultEl.hidden = true; verdictEl.hidden = true; lastCheck = null;
+  });
+  document.getElementById('check').addEventListener('click', function () { checkTx(); });
+
+  async function checkTx() {
+    var cfg = CHAINS[chainEl.value] || CHAINS.base;
+    var hash = hashEl.value.trim().toLowerCase();
+    var expTo = toEl.value.trim().toLowerCase();
+    var expAmtStr = amtEl.value.trim();
+    checkErrorEl.hidden = true; resultEl.hidden = true; verdictEl.hidden = true; lastCheck = null;
+    if (!isValidTxHash(hash)) {
+      checkErrorEl.textContent = 'That does not look like a transaction hash. It should be 0x followed by 64 hex characters.';
+      checkErrorEl.hidden = false; return;
+    }
+    if (expTo && !isAddress(expTo)) {
+      checkErrorEl.textContent = 'The expected recipient does not look like an address. It should be 0x followed by 40 hex characters — or leave it blank.';
+      checkErrorEl.hidden = false; return;
+    }
+    var expAmtRaw = null;
+    if (expAmtStr) {
+      expAmtRaw = parseAmountToRaw(expAmtStr, cfg.decimals);
+      if (expAmtRaw === null) {
+        checkErrorEl.textContent = 'The expected amount does not look like a number. Use a plain number like 0.02 — or leave it blank.';
+        checkErrorEl.hidden = false; return;
+      }
+    }
+    document.getElementById('explorer-tx').href = cfg.explorer + hash;
+    showCheckStatus('Reading the transaction from ' + cfg.name + '… this usually takes a few seconds.', 'hint');
+    try {
+      var r = await tryRpcs(cfg.rpcs, 'eth_getTransactionReceipt', [hash]);
+      var receipt = r.result;
+      if (receipt === null) {
+        var t = await tryRpcs(cfg.rpcs, 'eth_getTransaction', [hash]);
+        if (t.result) {
+          showCheckStatus('This transaction exists but has no receipt yet — it is still pending on ' + cfg.name + '. Wait a few seconds and check again.', 'hint');
+        } else {
+          checkErrorEl.textContent = 'No transaction with that hash exists on ' + cfg.name + '. Check the hash and the chain — it may be from the other network, or copied incompletely.';
+          checkErrorEl.hidden = false;
+          checkStatusEl.hidden = true;
+        }
+        return;
+      }
+      var blockNum = hexToInt(receipt.blockNumber);
+      var block = null;
+      try {
+        var b = await tryRpcs(cfg.rpcs, 'eth_getBlockByNumber', [receipt.blockNumber, false]);
+        block = b.result;
+      } catch (e) { /* timestamp is nice-to-have */ }
+      var timestamp = block && block.timestamp
+        ? new Date(hexToInt(block.timestamp) * 1000).toISOString() : 'unknown';
+      var tx = null;
+      try {
+        var txr = await tryRpcs(cfg.rpcs, 'eth_getTransaction', [hash]);
+        tx = txr.result;
+      } catch (e) { /* tx.from is nice-to-have */ }
+
+      var logs = receipt.logs || [];
+      var transfers = [];
+      for (var i = 0; i < logs.length; i++) {
+        var lg = logs[i];
+        if (!lg || !lg.topics || lg.topics.length < 3) continue;
+        if (String(lg.address).toLowerCase() !== cfg.usdc.toLowerCase()) continue;
+        if (String(lg.topics[0]).toLowerCase() !== TRANSFER_TOPIC0) continue;
+        transfers.push({
+          from: addrFromTopic(lg.topics[1]),
+          to: addrFromTopic(lg.topics[2]),
+          amount: lg.data,
+          logIndex: lg.logIndex
+        });
+      }
+      var statusOk = receipt.status === '0x1' || receipt.status === 1;
+      var first = transfers[0] || null;
+      var totalRaw = transfers.reduce(function (acc, t) { return acc + BigInt(t.amount); }, 0n);
+      var toVerdict = '', amtVerdict = '';
+      if (first && expTo) toVerdict = first.to === expTo ? 'MATCH' : 'MISMATCH';
+      if (first && expAmtRaw !== null) amtVerdict = totalRaw === expAmtRaw ? 'MATCH' : 'MISMATCH';
+      var overall = statusOk && transfers.length > 0 &&
+        (!expTo || (first && first.to === expTo)) &&
+        (expAmtRaw === null || totalRaw === expAmtRaw);
+
+      resultBody.innerHTML = '';
+      row('Chain', cfg.name + ' (USDC ' + cfg.usdc + ', ' + cfg.decimals + ' decimals)', '');
+      row('Transaction', hash, '');
+      row('Status', statusOk ? 'success (0x1)' : 'FAILED / reverted', statusOk ? 'MATCH' : 'MISMATCH');
+      row('Block', String(blockNum) + ' (' + timestamp + ')', '');
+      row('USDC Transfer logs', String(transfers.length) + (transfers.length === 0 ? ' (none — not a USDC payment)' : transfers.length === 1 ? ' (exactly one)' : ' (more than one — check each)'), transfers.length > 0 ? 'MATCH' : 'MISMATCH');
+      if (first) {
+        row('Total USDC moved', fmtUsdc(totalRaw.toString(), cfg.decimals) + ' (' + totalRaw.toString() + ' raw)', amtVerdict);
+        transfers.forEach(function (t, i) {
+          row('Transfer ' + (i + 1) + ' amount', fmtUsdc(t.amount, cfg.decimals) + ' (' + t.amount + ' raw)', '');
+          row('Transfer ' + (i + 1) + ' sender', t.from, '');
+          row('Transfer ' + (i + 1) + ' recipient', t.to, toVerdict);
+        });
+        if (tx && tx.from) row('Transaction sender (tx.from)', String(tx.from).toLowerCase(), '');
+      } else {
+        row('Total USDC moved', '— (no USDC Transfer log in this transaction)', 'MISMATCH');
+        row('Sender', '—', 'MISMATCH');
+        row('Recipient', '—', 'MISMATCH');
+      }
+      resultEl.hidden = false;
+      verdictEl.hidden = false;
+      if (!statusOk) {
+        verdictEl.textContent = '✗ Verdict: this transaction FAILED (reverted) — no payment was made.';
+        verdictEl.className = 'error';
+      } else if (transfers.length === 0) {
+        verdictEl.textContent = '✗ Verdict: this transaction contains no USDC transfer on ' + cfg.name + ' — it is not a USDC payment.';
+        verdictEl.className = 'error';
+      } else if (overall && (expTo || expAmtRaw !== null)) {
+        verdictEl.textContent = '✓ Verdict: this transaction matches the expected USDC payment — success, ' + fmtUsdc(totalRaw.toString(), cfg.decimals) + ' moved on ' + cfg.name + '.';
+        verdictEl.className = 'match';
+      } else if (overall) {
+        verdictEl.textContent = '✓ Verdict: this transaction moves ' + fmtUsdc(totalRaw.toString(), cfg.decimals) + ' on ' + cfg.name + ' — success, USDC Transfer log present. Compare the sender and recipient above against the claim yourself.';
+        verdictEl.className = 'match';
+      } else {
+        verdictEl.textContent = '⚠ Verdict: this transaction moves USDC but does not match the expected payment — check the fields above (recipient, amount).';
+        verdictEl.className = 'error';
+      }
+      showCheckStatus('Checked against ' + r.rpc + '.', 'hint');
+      lastCheck = {
+        chain: cfg.name, usdc: cfg.usdc, decimals: cfg.decimals,
+        hash: hash, statusOk: statusOk, block: blockNum, timestamp: timestamp,
+        transfers: transfers, totalRaw: totalRaw.toString(),
+        expectedTo: expTo || null, expectedAmount: expAmtStr || null,
+        verdict: verdictEl.textContent, rpc: r.rpc,
+        checkedAt: new Date().toISOString()
+      };
+    } catch (e) {
+      checkErrorEl.textContent = 'Could not read this transaction: ' + (e && e.message ? e.message : e) + ' Try again in a few seconds — or check it on the block explorer.';
+      checkErrorEl.hidden = false;
+      checkStatusEl.hidden = true;
+    }
+  }
+
+  function buildReport() {
+    var c = lastCheck;
+    var lines = [];
+    lines.push('# USDC Payment Verification Report');
+    lines.push('');
+    lines.push('- Chain: ' + c.chain);
+    lines.push('- USDC contract: ' + c.usdc + ' (' + c.decimals + ' decimals)');
+    lines.push('- Transaction: ' + c.hash);
+    lines.push('- Status: ' + (c.statusOk ? 'success (0x1)' : 'FAILED / reverted'));
+    lines.push('- Block: ' + c.block + ' (' + c.timestamp + ')');
+    lines.push('- USDC Transfer logs: ' + c.transfers.length);
+    lines.push('- Total USDC moved: ' + fmtUsdc(c.totalRaw, c.decimals) + ' (' + c.totalRaw + ' raw)');
+    c.transfers.forEach(function (t, i) {
+      lines.push('- Transfer ' + (i + 1) + ': ' + fmtUsdc(t.amount, c.decimals) + ' from ' + t.from + ' to ' + t.to);
+    });
+    if (c.expectedTo) lines.push('- Expected recipient: ' + c.expectedTo);
+    if (c.expectedAmount) lines.push('- Expected amount: ' + c.expectedAmount + ' USDC');
+    lines.push('- RPC used: ' + c.rpc);
+    lines.push('- Checked at: ' + c.checkedAt);
+    lines.push('');
+    lines.push('## Verdict');
+    lines.push('');
+    lines.push(c.verdict);
+    lines.push('');
+    lines.push('## Limits');
+    lines.push('');
+    lines.push('- This report reads the chain only. It proves a USDC amount moved from one address to another; it cannot prove what the payment was for, or that it matches a promise made off-chain. Compare the sender, recipient, and amount above against the claim yourself.');
+    lines.push('- A report that finds an error is worth the same as one that finds none: a mismatch is a finding, not a failure.');
+    lines.push('- Generated in the browser from public chain data by the USDC Payment Verifier.');
+    return lines.join(String.fromCharCode(10));
+  }
+
+  document.getElementById('copy-payee').addEventListener('click', function () {
+    var addr = document.getElementById('payee').textContent.trim();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(addr).then(function () {
+        document.getElementById('copy-note').hidden = false;
+      });
+    }
+  });
+  document.getElementById('reset-pay').addEventListener('click', function () {
+    payHashEl.value = ''; payStatusEl.hidden = true; payErrorEl.hidden = true;
+    reportEl.hidden = true;
+  });
+  document.getElementById('verify-pay').addEventListener('click', function () {
+    payErrorEl.hidden = true; reportEl.hidden = true;
+    var hash = payHashEl.value.trim().toLowerCase();
+    if (!PayVerify.isValidTxHash(hash)) {
+      payErrorEl.textContent = 'That does not look like a transaction hash. It should be 0x followed by 64 hex characters.';
+      payErrorEl.hidden = false;
+      return;
+    }
+    if (!lastCheck) {
+      payErrorEl.textContent = 'Run a check above first — the report is written from that check.';
+      payErrorEl.hidden = false;
+      return;
+    }
+    basescanPayEl.href = 'https://basescan.org/tx/' + hash;
+    showPayStatus('Checking the payment on Base… this usually takes a few seconds.', 'hint');
+    PayVerify.verifyPayment({ txHash: hash, expectedAmount: EXPECTED }).then(function (res) {
+      if (!res.ok) {
+        showPayStatus('', 'hint');
+        payErrorEl.textContent = 'Payment not confirmed: ' + (res.reason || 'unknown') +
+          (res.details ? ' — ' + res.details : '') +
+          '. Check the amount (exactly $0.01 USDC), the network (Base), and the recipient address, then try again.';
+        payErrorEl.hidden = false;
+        return;
+      }
+      showPayStatus('Payment confirmed on Base at block ' + res.blockNumber + '. The report download is ready.', 'match');
+      reportEl.hidden = false;
+      reportLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        var blob = new Blob([buildReport()], { type: 'text/markdown' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url; a.download = REPORT_FILENAME;
+        document.body.appendChild(a); a.click(); a.remove();
+        setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+      }, { once: true });
+    }).catch(function (e) {
+      showPayStatus('', 'hint');
+      payErrorEl.textContent = 'Could not reach Base RPCs to verify the payment: ' + (e && e.message ? e.message : String(e)) + '. Wait a minute and try again, or check the hash on Basescan.';
+      payErrorEl.hidden = false;
+    });
+  });
+
+})();
+
+</script>
+</body>
+</html>
