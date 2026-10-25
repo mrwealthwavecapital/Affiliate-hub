@@ -160,6 +160,7 @@
     'https://bsc.publicnode.com',
     'https://1rpc.io/bnb'
   ];
+  // Transfer event topic: keccak256("Transfer(address,address,uint256)") — pinned constant, do not change.
   var TRANSFER_TOPIC0 = '0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef';
   var RPC_TIMEOUT_MS = 15000;
   var EXAMPLE_TX = '0x85d2c59232c1c333a45a7bf829680bb8a8f5c62b84b849a4330cb2c408436253'; // B474, verified in the Oct 25, 2026 audit
@@ -305,6 +306,9 @@
         if (!lg || !lg.topics || lg.topics.length < 3) continue;
         if (String(lg.address).toLowerCase() !== FLAPJAX.toLowerCase()) continue;
         if (String(lg.topics[0]).toLowerCase() !== TRANSFER_TOPIC0) continue;
+        // A standard ERC-20 Transfer carries exactly 32 bytes of data (the amount).
+        // Non-standard events with other data lengths are skipped, not parsed.
+        if (typeof lg.data !== 'string' || lg.data.length !== 130) continue;
         transfers.push({
           from: addrFromTopic(lg.topics[1]),
           to: addrFromTopic(lg.topics[2]),
