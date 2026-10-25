@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Settlement Deadlines — Full Dataset ($0.01 USDC)</title>
+<meta name="description" content="The full settlement-deadlines dataset: 10 class-action settlements, 6 found-money leads, and 2 expired warnings. Pay $0.01 USDC on Base, verify on-chain, download the JSON. No account, no email.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<nav aria-label="Site">
+<a href="index.html">Home</a>
+<a href="robinhood-referral.html">Robinhood Referral</a>
+<a href="webull-vs-robinhood.html">Webull vs Robinhood</a>
+<a href="underdog-california.html">Underdog in California</a>
+<a href="polymarket-credit.html">Polymarket Credit</a>
+<a href="prediction-markets-compared.html">Prediction Markets Compared</a>
+<a href="underdog-refer-a-friend.html">Underdog Refer-a-Friend</a>
+<a href="prediction-markets-beginners.html">Prediction Markets Beginners</a>
+<a href="free-offers-ranked.html">Free Offers Ranked</a>
+<a href="bounties.html">Live Agent Bounties</a>
+<a href="webull-referral-explained.html">Webull Referral Explained</a>
+<a href="polymarket-feeshare-vs-referral.html">Polymarket Fee-Share vs Referral</a>
+<a href="underdog-predict-explained.html">Underdog Predict Explained</a>
+<a href="cashout-calculator.html">Cash-Out Calculator</a>
+<a href="referral-estimator.html">Reward Estimator</a>
+<a href="settlement-check.html">Settlement Check</a>
+<a href="underdog-best-ball.html">Underdog Best Ball</a>
+<a href="referrals-to-100.html">Referrals to $100</a>
+<a href="referral-didnt-arrive.html">Bonus Didn't Arrive</a>
+<a href="robinhood-claim-steps.html">Robinhood Claim Steps</a>
+<a href="underdog-promo-code-vs-referral.html">Underdog Promo Code vs Referral</a>
+<a href="webull-referral-timing.html">Webull Referral Timing</a>
+<a href="referral-terms-unlock.html">Unlock: Referral Terms ($0.01)</a>
+<a href="deadlines-unlock.html">Unlock: Settlement Deadlines ($0.01)</a>
+<a href="unclaimed-unlock.html">Unlock: Unclaimed Property ($0.01)</a>
+<a href="settlement-tracker-unlock.html">Unlock: Settlement Tracker ($12)</a>
+</nav>
+<h1>Settlement Deadlines — Full Dataset</h1>
+<p class="tagline">Every deadline in one file, so a payout is never missed because the date slipped by.</p>
+</header>
+<main>
+<div class="disclosure" role="note">
+<p><strong>Disclosure:</strong> This page sells a dataset for $0.01 USDC. It is not legal advice and it files nothing for you. Deadlines were checked October 25, 2026 — settlement terms change, so <strong>verify on the official settlement site before filing</strong>.</p>
+</div>
+
+<section>
+<h2>What is in the file</h2>
+<p>One JSON file with 18 entries, checked October 25, 2026: <strong>10 class-action settlements</strong> (AMN Healthcare, homebuyer antitrust, Highland Health, FinWise, Bestway pools, TransUnion bankruptcy, Fairchild Medical, Levoit, plus Dr. Squatch and Equifax), <strong>6 found-money leads</strong> (California unclaimed property, IRS 2023 and 2024 refunds, matured savings bonds, CA security deposits, unclaimed pensions/401(k)s), and <strong>2 expired warnings</strong> (the IRS 2022 refund window and the CA Middle Class Tax Refund) so you do not waste time chasing dead money. Each entry carries the deadline, the payout, the proof required, the filing link where the source gives one, and a verify-before-filing flag. <strong>Dr. Squatch and Equifax are flagged "details not verified"</strong> — their details were never verified in the source research; do not file on the basis of those rows alone.</p>
+<p class="hint">Filing a class action typically pays 6–18 months after filing — this is slow money, not fast cash. Deadlines are filing dates, not payout dates.</p>
+</section>
+
+<section class="tool-box" aria-label="Unlock the dataset">
+<h2>Unlock — $0.01 USDC on Base</h2>
+<p><strong>Price: $0.01 USDC</strong> (10,000 base units) on the Base network, sent to the address below. No account, no email, no KYC — the page checks your payment on the Base blockchain and then reveals the download.</p>
+<p><strong>Pay to:</strong> <code id="payee">0x940Db7cF60E0DE63a5A6fBF3D06290f6e7744B2c</code>
+<button type="button" class="secondary" id="copy-payee">Copy address</button>
+<span id="copy-note" class="hint" hidden>Copied.</span></p>
+<ol>
+<li>Send <strong>exactly $0.01 USDC on Base</strong> to the address above from any wallet. (Base network fees are a few cents of ETH — make sure you are on Base, not Ethereum mainnet.)</li>
+<li>Paste the transaction hash below and press <strong>Verify payment</strong>.</li>
+<li>When the page confirms the payment on-chain, the download appears.</li>
+</ol>
+<div class="field-row">
+<label for="txhash"><strong>Transaction hash</strong></label><br>
+<input type="text" id="txhash" placeholder="0x…" autocomplete="off" spellcheck="false" style="width:100%;box-sizing:border-box;padding:0.5rem 0.6rem;border:1px solid #b9c2cc;border-radius:8px;font:inherit;">
+</div>
+<div class="buttons">
+<button type="button" id="verify">Verify payment</button>
+<button type="button" class="secondary" id="reset">Clear</button>
+</div>
+<p id="status" class="hint" hidden aria-live="polite"></p>
+<p id="form-error" class="error" hidden></p>
+<p id="download" class="match" hidden><strong>Payment confirmed.</strong> <a href="data/deadlines.json" download="settlement-deadlines.json">Download the dataset (deadlines.json, 18 entries)</a></p>
+<p class="hint">If the check fails, you can confirm the payment yourself: <a id="basescan" href="https://basescan.org" target="_blank" rel="noopener">look the hash up on Basescan</a> and check that it sent at least $0.01 USDC to the address above. Underpaying, sending a different token, or sending on the wrong network will not unlock the file.</p>
+<p class="verify"><strong>Honest note about this gate:</strong> this is a light honesty gate. Your payment is verified on-chain and goes straight to the builder's wallet — but a determined person could find the file in the page source and download it without paying. That is the trade-off for having no accounts, no logins, and no middleman. Every normal buyer pays the cent, and that is the deal.</p>
+</section>
+</main>
+<footer>
+<p>Disclosure: I earn a commission if you sign up through my link. Offers checked October 2026; terms change — verify live terms before signing up.</p>
+<p><a href="index.html">Home</a> · <a href="robinhood-referral.html">Robinhood</a> · <a href="webull-vs-robinhood.html">Webull vs Robinhood</a> · <a href="underdog-california.html">Underdog in California</a> · <a href="polymarket-credit.html">Polymarket</a> · <a href="prediction-markets-compared.html">Prediction Markets Compared</a> · <a href="underdog-refer-a-friend.html">Underdog Refer-a-Friend</a> · <a href="prediction-markets-beginners.html">Prediction Markets Beginners</a> · <a href="free-offers-ranked.html">Free Offers Ranked</a> · <a href="bounties.html">Live Agent Bounties</a> · <a href="webull-referral-explained.html">Webull Referral</a> · <a href="polymarket-feeshare-vs-referral.html">Polymarket Fee-Share</a> · <a href="underdog-predict-explained.html">Underdog Predict</a> · <a href="cashout-calculator.html">Cash-Out Calculator</a> · <a href="referral-estimator.html">Reward Estimator</a> · <a href="settlement-check.html">Settlement Check</a> · <a href="underdog-best-ball.html">Best Ball</a> · <a href="referrals-to-100.html">Referrals to $100</a> · <a href="referral-didnt-arrive.html">Bonus Didn't Arrive</a> · <a href="robinhood-claim-steps.html">Robinhood Claim Steps</a> · <a href="underdog-promo-code-vs-referral.html">Underdog Promo Code vs Referral</a> · <a href="webull-referral-timing.html">Webull Referral Timing</a></p>
+</footer>
+<script src="assets/pay-verify.js"></script>
+<script>
+(function () {
+  var EXPECTED = 10000n; // $0.01 USDC, 6 decimals
+  var statusEl = document.getElementById('status');
+  var errorEl = document.getElementById('form-error');
+  var downloadEl = document.getElementById('download');
+  var hashEl = document.getElementById('txhash');
+  var basescanEl = document.getElementById('basescan');
+  function showStatus(text, cls) {
+    statusEl.textContent = text;
+    statusEl.className = cls || 'hint';
+    statusEl.hidden = false;
+  }
+  document.getElementById('copy-payee').addEventListener('click', function () {
+    var done = function () { document.getElementById('copy-note').hidden = false; };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(PayVerify.PAYEE).then(done, done);
+    } else { done(); }
+  });
+  document.getElementById('reset').addEventListener('click', function () {
+    hashEl.value = ''; statusEl.hidden = true; errorEl.hidden = true; downloadEl.hidden = true;
+  });
+  document.getElementById('verify').addEventListener('click', async function () {
+    var hash = hashEl.value.trim();
+    errorEl.hidden = true; downloadEl.hidden = true;
+    if (PayVerify.isValidTxHash(hash)) {
+      basescanEl.href = 'https://basescan.org/tx/' + hash;
+    }
+    showStatus('Checking Base… this usually takes a few seconds.', 'hint');
+    try {
+      var r = await PayVerify.verifyPayment({ txHash: hash, expectedAmount: EXPECTED });
+      if (r.ok) {
+        showStatus('✓ ' + r.message, 'match');
+        downloadEl.hidden = false;
+      } else if (r.status === 'pending') {
+        showStatus('⏳ ' + r.message, 'hint');
+      } else {
+        errorEl.textContent = r.message;
+        errorEl.hidden = false;
+        statusEl.hidden = true;
+      }
+    } catch (e) {
+      errorEl.textContent = 'Something went wrong checking the payment: ' + e.message + ' Try again in a few seconds.';
+      errorEl.hidden = false;
+      statusEl.hidden = true;
+    }
+  });
+})();
+</script>
+</body>
+</html>
