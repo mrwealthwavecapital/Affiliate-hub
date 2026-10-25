@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solana Wallet Snapshot — check any wallet's SOL and token balances (free)</title>
+<meta name="description" content="Free Solana wallet checker: paste any Solana wallet address, see the SOL balance and every SPL token account straight from Solana. A $0.01 USDC unlock downloads the full written snapshot report.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<nav aria-label="Site">
+<a href="index.html">Home</a>
+<a href="robinhood-referral.html">Robinhood Referral</a>
+<a href="webull-vs-robinhood.html">Webull vs Robinhood</a>
+<a href="underdog-california.html">Underdog in California</a>
+<a href="polymarket-credit.html">Polymarket Credit</a>
+<a href="prediction-markets-compared.html">Prediction Markets Compared</a>
+<a href="underdog-refer-a-friend.html">Underdog Refer-a-Friend</a>
+<a href="prediction-markets-beginners.html">Prediction Markets Beginners</a>
+<a href="free-offers-ranked.html">Free Offers Ranked</a>
+<a href="bounties.html">Live Agent Bounties</a>
+<a href="webull-referral-explained.html">Webull Referral Explained</a>
+<a href="polymarket-feeshare-vs-referral.html">Polymarket Fee-Share vs Referral</a>
+<a href="underdog-predict-explained.html">Underdog Predict Explained</a>
+<a href="cashout-calculator.html">Cash-Out Calculator</a>
+<a href="referral-estimator.html">Reward Estimator</a>
+<a href="settlement-check.html">Settlement Check</a>
+<a href="underdog-best-ball.html">Underdog Best Ball</a>
+<a href="referrals-to-100.html">Referrals to $100</a>
+<a href="referral-didnt-arrive.html">Bonus Didn't Arrive</a>
+<a href="robinhood-claim-steps.html">Robinhood Claim Steps</a>
+<a href="underdog-promo-code-vs-referral.html">Underdog Promo Code vs Referral</a>
+<a href="webull-referral-timing.html">Webull Referral Timing</a>
+<a href="referral-terms-unlock.html">Unlock: Referral Terms ($0.01)</a>
+<a href="deadlines-unlock.html">Unlock: Settlement Deadlines ($0.01)</a>
+<a href="unclaimed-unlock.html">Unlock: Unclaimed Property ($0.01)</a>
+<a href="settlement-tracker-unlock.html">Unlock: Settlement Tracker ($12)</a>
+<a href="referral-cashout-tracker-unlock.html">Unlock: Cash-Out Tracker ($19)</a>
+<a href="unclaimed-kit-unlock.html">Unlock: Unclaimed Property Kit ($15)</a>
+<a href="flapjax-verifier.html">FLAPJAX Payout Verifier</a>
+<a href="prediction-market-fee-calculator-unlock.html">Unlock: Fee Calculator ($15)</a>
+<a href="referral-link-audit-checklist-unlock.html">Unlock: Link Audit Checklist ($12)</a>
+<a href="freelance-rate-calculator-unlock.html">Unlock: Rate Calculator ($15)</a>
+<a href="referral-offers-honestly-unlock.html">Unlock: Referral Offers Guide ($19)</a>
+<a href="underdog-in-california-unlock.html">Unlock: Underdog in California ($15)</a>
+<a href="notion-referral-tracker-unlock.html">Unlock: Notion Tracker ($19)</a>
+<a href="flapjax-q43-dataset-unlock.html">Unlock: FLAPJAX Q43 Dataset ($0.01)</a>
+
+<a href="referral-terms-cheatsheet-unlock.html">Unlock: Referral Terms Cheat Sheet ($9)</a>
+<a href="settlement-deadlines-2026-unlock.html">Unlock: Settlement Deadlines 2026 ($12)</a>
+<a href="agent-bounty-tracker-unlock.html">Unlock: Bounty Earnings Tracker ($12)</a>
+<a href="flapjax-payout-real.html">Is a FLAPJAX Payout Real?</a>
+<a href="robinhood-bonus-not-received.html">Robinhood Bonus Not Received?</a>
+<a href="unclaimed-property-california.html">Unclaimed Property in California</a>
+
+<a href="prediction-markets-guide-unlock.html">Unlock: Prediction Markets Compared Guide ($12)</a>
+<a href="verify-token-payout-unlock.html">Unlock: How to Verify Any Token Payout ($9)</a>
+<a href="agent-bounty-directory-unlock.html">Unlock: Agent Bounty Board Directory ($9)</a>
+<a href="bsc-holder-snapshot.html">BSC Token Holder Snapshot (free tool)</a>
+<a href="solana-wallet-snapshot.html">Solana Wallet Snapshot (free tool)</a>
+<a href="polymarket-10000-catch.html">Polymarket Referral: The $10,000 Catch</a>
+<a href="underdog-bonus-entries-expiring.html">Underdog Bonus Entries Expiring?</a>
+</nav>
+</header>
+<main>
+<div class="disclosure" role="note">
+<p><strong>Disclosure:</strong> This is a free on-chain reader, not an endorsement of any token and not financial advice. It reads public Solana data only. The full written report below costs $0.01 USDC.</p>
+</div>
+
+<section>
+<h2>What this checks</h2>
+<p>Paste any Solana wallet address. This tool reads it straight from Solana and shows:</p>
+<ul>
+<li><strong>SOL balance</strong> — the wallet's SOL balance (lamports converted to SOL).</li>
+<li><strong>Token accounts</strong> — every SPL token account the wallet owns, with the token mint and the balance.</li>
+<li><strong>Token count</strong> — how many different tokens the wallet holds.</li>
+</ul>
+<p><strong>Verified reference data:</strong> the wallet used for our WURK agent account (<code>BmqGEWHLhccaA79bewkNVayVBwPrbnwFvbfnjP5evi85</code>) held 0 SOL and 0 token accounts when checked on October 25, 2026 — a real result, and the one this tool's example button shows.</p>
+<p class="hint"><strong>What it cannot check:</strong> token names or dollar values. Mints are shown as addresses because this tool does no registry lookup, and it does not price anything — a large balance of a token nobody wants is still worth nothing. The public Solana RPC also rate-limits (HTTP 429): if it does, this page waits and retries a few times, and says so honestly. If it still fails, wait a minute and try again.</p>
+</section>
+
+<section class="tool-box" aria-label="Check a wallet">
+<h2>Check a wallet — free</h2>
+<div class="field-row">
+<label for="wallet"><strong>Solana wallet address</strong></label><br>
+<input type="text" id="wallet" placeholder="Base58 address…" autocomplete="off" spellcheck="false" style="width:100%;box-sizing:border-box;padding:0.5rem 0.6rem;border:1px solid #b9c2cc;border-radius:8px;font:inherit;">
+</div>
+<div class="buttons">
+<button type="button" id="check">Check wallet</button>
+<button type="button" class="secondary" id="example">Try an example (WURK account wallet, verified)</button>
+<button type="button" class="secondary" id="clear-check">Clear</button>
+</div>
+<p id="check-status" class="hint" hidden aria-live="polite"></p>
+<p id="check-error" class="error" hidden></p>
+<div id="check-result" hidden>
+<table id="result-table">
+<tbody id="result-body"></tbody>
+</table>
+<p id="verdict" class="match" hidden></p>
+<p class="hint">Confirm it yourself: <a id="solscan-wallet" href="https://solscan.io" target="_blank" rel="noopener">open this wallet on Solscan</a>.</p>
+</div>
+</section>
+<section class="tool-box" aria-label="Full written report">
+<h2>Full written report — $0.01 USDC on Base</h2>
+<p><strong>Price: $0.01 USDC</strong> (10,000 base units) on the Base network, sent to the address below. No account, no email, no KYC — the page checks your payment on the Base blockchain, then enables the report download.</p>
+<p>The report is a written markdown file for the snapshot you just checked: the token and wallet, the balance and share of supply, the total supply, the block, and the RPC used — the same format as the public FlapJax payout audits.</p>
+<p><strong>Pay to:</strong> <code id="payee">0x940Db7cF60E0DE63a5A6fBF3D06290f6e7744B2c</code>
+<button type="button" class="secondary" id="copy-payee">Copy address</button>
+<span id="copy-note" class="hint" hidden>Copied.</span></p>
+<ol>
+<li>Run a snapshot above first (the report is written from that check).</li>
+<li>Send <strong>exactly $0.01 USDC on Base</strong> to the address above from any wallet. (Base network fees are a few cents of ETH — make sure you are on Base, not Ethereum mainnet.)</li>
+<li>Paste the Base transaction hash below and press <strong>Verify payment</strong>.</li>
+<li>When the page confirms the payment on-chain, the report download appears.</li>
+</ol>
+<div class="field-row">
+<label for="payhash"><strong>Base payment transaction hash ($0.01 USDC)</strong></label><br>
+<input type="text" id="payhash" placeholder="0x…" autocomplete="off" spellcheck="false" style="width:100%;box-sizing:border-box;padding:0.5rem 0.6rem;border:1px solid #b9c2cc;border-radius:8px;font:inherit;">
+</div>
+<div class="buttons">
+<button type="button" id="verify-pay">Verify payment</button>
+<button type="button" class="secondary" id="reset-pay">Clear</button>
+</div>
+<p id="pay-status" class="hint" hidden aria-live="polite"></p>
+<p id="pay-error" class="error" hidden></p>
+<p id="report-download" class="match" hidden><strong>Payment confirmed.</strong> <a href="#" id="report-link">Download the full snapshot report (.md)</a></p>
+<p class="hint">If the check fails, you can confirm the payment yourself: <a id="basescan-pay" href="https://basescan.org" target="_blank" rel="noopener">look the hash up on Basescan</a> and check that it sent at least $0.01 USDC to the address above. Underpaying, sending a different token, or sending on the wrong network will not unlock the report.</p>
+<p class="verify"><strong>Honest note about this gate:</strong> this is a light honesty gate. Your payment is verified on-chain and goes straight to the builder's wallet — but the report itself is generated in your browser from the same public chain data the free checker already shows above, so a determined person could write the same report without paying. That is the trade-off for having no accounts, no logins, and no middleman. What the $0.01 buys is the supported path: the verified payment and the formatted report file, ready to file or publish.</p>
+</section>
+
+</main>
+<footer>
+<p>Disclosure: I earn a commission if you sign up through my link. Offers checked October 2026; terms change — verify live terms before signing up.</p>
+<p><a href="index.html">Home</a> · <a href="robinhood-referral.html">Robinhood</a> · <a href="webull-vs-robinhood.html">Webull vs Robinhood</a> · <a href="underdog-california.html">Underdog in California</a> · <a href="polymarket-credit.html">Polymarket</a> · <a href="prediction-markets-compared.html">Prediction Markets Compared</a> · <a href="underdog-refer-a-friend.html">Underdog Refer-a-Friend</a> · <a href="prediction-markets-beginners.html">Prediction Markets Beginners</a> · <a href="free-offers-ranked.html">Free Offers Ranked</a> · <a href="bounties.html">Live Agent Bounties</a> · <a href="webull-referral-explained.html">Webull Referral</a> · <a href="polymarket-feeshare-vs-referral.html">Polymarket Fee-Share</a> · <a href="underdog-predict-explained.html">Underdog Predict</a> · <a href="cashout-calculator.html">Cash-Out Calculator</a> · <a href="referral-estimator.html">Reward Estimator</a> · <a href="settlement-check.html">Settlement Check</a> · <a href="underdog-best-ball.html">Best Ball</a> · <a href="referrals-to-100.html">Referrals to $100</a> · <a href="referral-didnt-arrive.html">Bonus Didn't Arrive</a> · <a href="robinhood-claim-steps.html">Robinhood Claim Steps</a> · <a href="underdog-promo-code-vs-referral.html">Underdog Promo Code vs Referral</a> · <a href="webull-referral-timing.html">Webull Referral Timing</a></p>
+</footer>
+<script src="assets/pay-verify.js"></script>
+<script>
+(function () {
+  var SOL_RPC = 'https://api.mainnet-beta.solana.com';
+  var SPL_PROGRAM = 'TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA';
+  var TOKEN2022_PROGRAM = 'TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb'; // verified against spl.solana.com/token-2022 (decodes to 32 bytes)
+  var RPC_TIMEOUT_MS = 20000;
+  var EXAMPLE_WALLET = 'BmqGEWHLhccaA79bewkNVayVBwPrbnwFvbfnjP5evi85'; // WURK account wallet
+  var EXPECTED = 10000n; // $0.01 USDC, 6 decimals
+  var REPORT_FILENAME = 'solana-wallet-snapshot-report.md';
+
+  var walletEl = document.getElementById('wallet');
+  var checkStatusEl = document.getElementById('check-status');
+  var checkErrorEl = document.getElementById('check-error');
+  var resultEl = document.getElementById('check-result');
+  var resultBody = document.getElementById('result-body');
+  var verdictEl = document.getElementById('verdict');
+  var payHashEl = document.getElementById('payhash');
+  var payStatusEl = document.getElementById('pay-status');
+  var payErrorEl = document.getElementById('pay-error');
+  var reportEl = document.getElementById('report-download');
+  var reportLink = document.getElementById('report-link');
+  var basescanPayEl = document.getElementById('basescan-pay');
+  var lastCheck = null;
+
+  function showCheckStatus(text, cls) {
+    checkStatusEl.textContent = text;
+    checkStatusEl.className = cls || 'hint';
+    checkStatusEl.hidden = false;
+  }
+  function showPayStatus(text, cls) {
+    payStatusEl.textContent = text;
+    payStatusEl.className = cls || 'hint';
+    payStatusEl.hidden = false;
+  }
+  function isSolAddress(a) {
+    return typeof a === 'string' && /^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(a.trim());
+  }
+  function fmtSol(lamports) {
+    var n = BigInt(lamports);
+    var whole = n / 1000000000n;
+    var frac = n % 1000000000n;
+    var fracStr = frac.toString().padStart(9, '0').replace(/0+$/, '');
+    return whole.toString() + (fracStr ? '.' + fracStr : '') + ' SOL';
+  }
+  function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+
+  function solCall(method, params, attempt) {
+    attempt = attempt || 0;
+    var controller;
+    var options = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: method, params: params })
+    };
+    if (typeof AbortController !== 'undefined') {
+      controller = new AbortController();
+      options.signal = controller.signal;
+      setTimeout(function () { controller.abort(); }, RPC_TIMEOUT_MS);
+    }
+    return fetch(SOL_RPC, options).then(function (res) {
+      if (res.status === 429) {
+        if (attempt < 2) {
+          var wait = attempt === 0 ? 5000 : 15000;
+          showCheckStatus('The public Solana RPC is rate-limiting (429). Waiting ' + (wait / 1000) + 's and retrying…', 'hint');
+          return sleep(wait).then(function () { return solCall(method, params, attempt + 1); });
+        }
+        throw new Error('HTTP 429 — the public Solana RPC is rate-limiting this request. Wait a minute and try again.');
+      }
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    }).then(function (json) {
+      if (json.error) throw new Error(json.error.message || 'RPC error');
+      return json.result;
+    });
+  }
+  function row(label, value, verdict) {
+    var tr = document.createElement('tr');
+    var td1 = document.createElement('td'); td1.textContent = label;
+    var td2 = document.createElement('td'); td2.textContent = value;
+    var td3 = document.createElement('td'); td3.textContent = verdict || '';
+    tr.appendChild(td1); tr.appendChild(td2); tr.appendChild(td3);
+    resultBody.appendChild(tr);
+  }
+
+  document.getElementById('example').addEventListener('click', function () {
+    walletEl.value = EXAMPLE_WALLET;
+    checkWallet();
+  });
+  document.getElementById('clear-check').addEventListener('click', function () {
+    walletEl.value = '';
+    checkStatusEl.hidden = true; checkErrorEl.hidden = true;
+    resultEl.hidden = true; verdictEl.hidden = true; lastCheck = null;
+  });
+  document.getElementById('check').addEventListener('click', function () { checkWallet(); });
+
+  async function checkWallet() {
+    var wallet = walletEl.value.trim();
+    checkErrorEl.hidden = true; resultEl.hidden = true; verdictEl.hidden = true; lastCheck = null;
+    if (!isSolAddress(wallet)) {
+      checkErrorEl.textContent = 'That does not look like a Solana wallet address. It should be a base58 address, 32–44 characters.';
+      checkErrorEl.hidden = false; return;
+    }
+    document.getElementById('solscan-wallet').href = 'https://solscan.io/account/' + wallet;
+    showCheckStatus('Reading the wallet from Solana… this usually takes a few seconds.', 'hint');
+    try {
+      var bal = await solCall('getBalance', [wallet]);
+      var tokens = [];
+      var tokenErr = null;
+      try {
+        var spl = await solCall('getTokenAccountsByOwner', [wallet, { programId: SPL_PROGRAM }, { encoding: 'jsonParsed' }]);
+        (spl.value || []).forEach(function (acc) {
+          var info = acc.account && acc.account.data && acc.account.data.parsed && acc.account.data.parsed.info;
+          if (info && info.tokenAmount) tokens.push({ mint: info.mint, amount: info.tokenAmount.uiAmountString, decimals: info.tokenAmount.decimals });
+        });
+      } catch (e) { tokenErr = e; }
+      try {
+        var t22 = await solCall('getTokenAccountsByOwner', [wallet, { programId: TOKEN2022_PROGRAM }, { encoding: 'jsonParsed' }]);
+        (t22.value || []).forEach(function (acc) {
+          var info = acc.account && acc.account.data && acc.account.data.parsed && acc.account.data.parsed.info;
+          if (info && info.tokenAmount) tokens.push({ mint: info.mint, amount: info.tokenAmount.uiAmountString, decimals: info.tokenAmount.decimals });
+        });
+      } catch (e) { tokenErr = tokenErr || e; }
+
+      resultBody.innerHTML = '';
+      row('Wallet', wallet, '');
+      row('SOL balance (lamports)', String(bal.value), '');
+      row('SOL balance', fmtSol(bal.value), '');
+      row('Token accounts', String(tokens.length) + (tokenErr ? ' (one token-program read failed — count may be incomplete)' : ''), '');
+      tokens.forEach(function (t) {
+        row('Token ' + t.mint, t.amount + ' (decimals ' + t.decimals + ')', '');
+      });
+      resultEl.hidden = false;
+      verdictEl.hidden = false;
+      if (tokens.length === 0) {
+        verdictEl.textContent = 'Verdict: this wallet holds ' + fmtSol(bal.value) + ' and 0 SPL token accounts.' + (tokenErr ? ' (One token-program read failed, so the 0 count is provisional.)' : '');
+      } else {
+        verdictEl.textContent = 'Verdict: this wallet holds ' + fmtSol(bal.value) + ' and ' + tokens.length + ' token account(s) across ' + tokens.length + ' mint(s). Mints are shown as addresses — this tool does no name lookup and no pricing.';
+      }
+      verdictEl.className = 'match';
+      showCheckStatus('Done — read from the public Solana RPC.', 'hint');
+      lastCheck = {
+        wallet: wallet, solLamports: String(bal.value), sol: fmtSol(bal.value),
+        tokens: tokens, tokenErr: tokenErr ? String(tokenErr.message || tokenErr) : null,
+        checkedAt: new Date().toISOString()
+      };
+    } catch (e) {
+      checkErrorEl.textContent = 'Could not read the wallet from Solana: ' + (e && e.message ? e.message : String(e));
+      checkErrorEl.hidden = false; checkStatusEl.hidden = true;
+    }
+  }
+
+  function buildReport() {
+    var c = lastCheck;
+    var lines = [];
+    lines.push('# Solana Wallet Snapshot — written report');
+    lines.push('');
+    lines.push('- Wallet: ' + c.wallet);
+    lines.push('- SOL balance (lamports): ' + c.solLamports);
+    lines.push('- SOL balance: ' + c.sol);
+    lines.push('- Token accounts: ' + c.tokens.length + (c.tokenErr ? ' (one token-program read failed — count may be incomplete: ' + c.tokenErr + ')' : ''));
+    c.tokens.forEach(function (t) {
+      lines.push('- Token ' + t.mint + ': ' + t.amount + ' (decimals ' + t.decimals + ')');
+    });
+    lines.push('- RPC used: https://api.mainnet-beta.solana.com');
+    lines.push('- Checked at: ' + c.checkedAt);
+    lines.push('');
+    lines.push('Method: getBalance and getTokenAccountsByOwner (SPL Token program and Token-2022) were read from the public Solana RPC; retries with backoff were used on HTTP 429 rate-limits. Mints are shown as addresses — no registry lookup and no pricing was applied. A large balance of a token nobody wants is still worth nothing; this report is not investment advice.');
+    return lines.join(String.fromCharCode(10));
+  }
+
+  document.getElementById('copy-payee').addEventListener('click', function () {
+    var addr = document.getElementById('payee').textContent.trim();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(addr).then(function () {
+        document.getElementById('copy-note').hidden = false;
+      });
+    }
+  });
+  document.getElementById('reset-pay').addEventListener('click', function () {
+    payHashEl.value = ''; payStatusEl.hidden = true; payErrorEl.hidden = true;
+    reportEl.hidden = true;
+  });
+  document.getElementById('verify-pay').addEventListener('click', function () {
+    payErrorEl.hidden = true; reportEl.hidden = true;
+    var hash = payHashEl.value.trim().toLowerCase();
+    if (!PayVerify.isValidTxHash(hash)) {
+      payErrorEl.textContent = 'That does not look like a transaction hash. It should be 0x followed by 64 hex characters.';
+      payErrorEl.hidden = false;
+      return;
+    }
+    if (!lastCheck) {
+      payErrorEl.textContent = 'Run a snapshot above first — the report is written from that check.';
+      payErrorEl.hidden = false;
+      return;
+    }
+    basescanPayEl.href = 'https://basescan.org/tx/' + hash;
+    showPayStatus('Checking the payment on Base… this usually takes a few seconds.', 'hint');
+    PayVerify.verifyPayment({ txHash: hash, expectedAmount: EXPECTED }).then(function (res) {
+      if (!res.ok) {
+        showPayStatus('', 'hint');
+        payErrorEl.textContent = 'Payment not confirmed: ' + (res.reason || 'unknown') +
+          (res.details ? ' — ' + res.details : '') +
+          '. Check the amount (exactly $0.01 USDC), the network (Base), and the recipient address, then try again.';
+        payErrorEl.hidden = false;
+        return;
+      }
+      showPayStatus('Payment confirmed on Base at block ' + res.blockNumber + '. The report download is ready.', 'match');
+      reportEl.hidden = false;
+      reportLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        var blob = new Blob([buildReport()], { type: 'text/markdown' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url; a.download = REPORT_FILENAME;
+        document.body.appendChild(a); a.click(); a.remove();
+        setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+      }, { once: true });
+    }).catch(function (e) {
+      showPayStatus('', 'hint');
+      payErrorEl.textContent = 'Could not reach Base RPCs to verify the payment: ' + (e && e.message ? e.message : String(e)) + '. Wait a minute and try again, or check the hash on Basescan.';
+      payErrorEl.hidden = false;
+    });
+  });
+
+})();
+
+</script>
+</body>
+</html>

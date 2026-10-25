@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BSC Token Holder Snapshot — check any wallet's balance and share of supply (free)</title>
+<meta name="description" content="Free BSC holder checker: paste any BEP-20 token contract and wallet, see the balance, total supply, and share of supply straight from BNB Smart Chain. A $0.01 USDC unlock downloads the full written snapshot report.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<nav aria-label="Site">
+<a href="index.html">Home</a>
+<a href="robinhood-referral.html">Robinhood Referral</a>
+<a href="webull-vs-robinhood.html">Webull vs Robinhood</a>
+<a href="underdog-california.html">Underdog in California</a>
+<a href="polymarket-credit.html">Polymarket Credit</a>
+<a href="prediction-markets-compared.html">Prediction Markets Compared</a>
+<a href="underdog-refer-a-friend.html">Underdog Refer-a-Friend</a>
+<a href="prediction-markets-beginners.html">Prediction Markets Beginners</a>
+<a href="free-offers-ranked.html">Free Offers Ranked</a>
+<a href="bounties.html">Live Agent Bounties</a>
+<a href="webull-referral-explained.html">Webull Referral Explained</a>
+<a href="polymarket-feeshare-vs-referral.html">Polymarket Fee-Share vs Referral</a>
+<a href="underdog-predict-explained.html">Underdog Predict Explained</a>
+<a href="cashout-calculator.html">Cash-Out Calculator</a>
+<a href="referral-estimator.html">Reward Estimator</a>
+<a href="settlement-check.html">Settlement Check</a>
+<a href="underdog-best-ball.html">Underdog Best Ball</a>
+<a href="referrals-to-100.html">Referrals to $100</a>
+<a href="referral-didnt-arrive.html">Bonus Didn't Arrive</a>
+<a href="robinhood-claim-steps.html">Robinhood Claim Steps</a>
+<a href="underdog-promo-code-vs-referral.html">Underdog Promo Code vs Referral</a>
+<a href="webull-referral-timing.html">Webull Referral Timing</a>
+<a href="referral-terms-unlock.html">Unlock: Referral Terms ($0.01)</a>
+<a href="deadlines-unlock.html">Unlock: Settlement Deadlines ($0.01)</a>
+<a href="unclaimed-unlock.html">Unlock: Unclaimed Property ($0.01)</a>
+<a href="settlement-tracker-unlock.html">Unlock: Settlement Tracker ($12)</a>
+<a href="referral-cashout-tracker-unlock.html">Unlock: Cash-Out Tracker ($19)</a>
+<a href="unclaimed-kit-unlock.html">Unlock: Unclaimed Property Kit ($15)</a>
+<a href="flapjax-verifier.html">FLAPJAX Payout Verifier</a>
+<a href="prediction-market-fee-calculator-unlock.html">Unlock: Fee Calculator ($15)</a>
+<a href="referral-link-audit-checklist-unlock.html">Unlock: Link Audit Checklist ($12)</a>
+<a href="freelance-rate-calculator-unlock.html">Unlock: Rate Calculator ($15)</a>
+<a href="referral-offers-honestly-unlock.html">Unlock: Referral Offers Guide ($19)</a>
+<a href="underdog-in-california-unlock.html">Unlock: Underdog in California ($15)</a>
+<a href="notion-referral-tracker-unlock.html">Unlock: Notion Tracker ($19)</a>
+<a href="flapjax-q43-dataset-unlock.html">Unlock: FLAPJAX Q43 Dataset ($0.01)</a>
+
+<a href="referral-terms-cheatsheet-unlock.html">Unlock: Referral Terms Cheat Sheet ($9)</a>
+<a href="settlement-deadlines-2026-unlock.html">Unlock: Settlement Deadlines 2026 ($12)</a>
+<a href="agent-bounty-tracker-unlock.html">Unlock: Bounty Earnings Tracker ($12)</a>
+<a href="flapjax-payout-real.html">Is a FLAPJAX Payout Real?</a>
+<a href="robinhood-bonus-not-received.html">Robinhood Bonus Not Received?</a>
+<a href="unclaimed-property-california.html">Unclaimed Property in California</a>
+
+<a href="prediction-markets-guide-unlock.html">Unlock: Prediction Markets Compared Guide ($12)</a>
+<a href="verify-token-payout-unlock.html">Unlock: How to Verify Any Token Payout ($9)</a>
+<a href="agent-bounty-directory-unlock.html">Unlock: Agent Bounty Board Directory ($9)</a>
+<a href="bsc-holder-snapshot.html">BSC Token Holder Snapshot (free tool)</a>
+<a href="solana-wallet-snapshot.html">Solana Wallet Snapshot (free tool)</a>
+<a href="polymarket-10000-catch.html">Polymarket Referral: The $10,000 Catch</a>
+<a href="underdog-bonus-entries-expiring.html">Underdog Bonus Entries Expiring?</a>
+</nav>
+</header>
+<main>
+<div class="disclosure" role="note">
+<p><strong>Disclosure:</strong> This is a free on-chain reader, not an endorsement of any token and not financial advice. It reads public BNB Smart Chain data only. The full written report below costs $0.01 USDC.</p>
+</div>
+
+<section>
+<h2>What this checks</h2>
+<p>Paste any BEP-20 token contract and any wallet. This tool reads the token straight from BNB Smart Chain and shows:</p>
+<ul>
+<li><strong>Balance</strong> — the wallet's balance of that token (raw and human-readable, using the token's own decimals).</li>
+<li><strong>Total supply</strong> — the token's total supply from the contract.</li>
+<li><strong>Share of supply</strong> — the wallet's balance as a percentage of total supply.</li>
+<li><strong>Block</strong> — the latest BSC block the read was taken at.</li>
+</ul>
+<p><strong>Verified reference data</strong> (from public audits of FlapJax payouts, October 2026): FLAPJAX total supply 44,444,444,444; the top 20 holders own 78.47% of supply at block 129,454,096 (two PancakeSwap V3 pools hold 57.75% combined — extremely concentrated). The FlapJax treasury held 834,038,663.16 FLAPJAX (1.8766% of supply) when checked on October 25, 2026.</p>
+<p class="hint"><strong>What it cannot check:</strong> holder rank. This tool shows one wallet's share of supply; it does not rank that wallet against all holders, and it does not check whether the token is worth anything — a large share of a token nobody wants is still worth nothing. A token contract that has no code at the address you paste is not a token at all, and this tool will say so.</p>
+</section>
+
+<section class="tool-box" aria-label="Check a holder">
+<h2>Check a holder — free</h2>
+<div class="field-row">
+<label for="token"><strong>Token contract address (BEP-20)</strong></label><br>
+<input type="text" id="token" placeholder="0x…" autocomplete="off" spellcheck="false" style="width:100%;box-sizing:border-box;padding:0.5rem 0.6rem;border:1px solid #b9c2cc;border-radius:8px;font:inherit;">
+</div>
+<div class="field-row">
+<label for="wallet"><strong>Wallet address</strong></label><br>
+<input type="text" id="wallet" placeholder="0x…" autocomplete="off" spellcheck="false" style="width:100%;box-sizing:border-box;padding:0.5rem 0.6rem;border:1px solid #b9c2cc;border-radius:8px;font:inherit;">
+</div>
+<div class="buttons">
+<button type="button" id="check">Check holder</button>
+<button type="button" class="secondary" id="example">Try an example (FLAPJAX treasury, verified)</button>
+<button type="button" class="secondary" id="clear-check">Clear</button>
+</div>
+<p id="check-status" class="hint" hidden aria-live="polite"></p>
+<p id="check-error" class="error" hidden></p>
+<div id="check-result" hidden>
+<table id="result-table">
+<tbody id="result-body"></tbody>
+</table>
+<p id="verdict" class="match" hidden></p>
+<p class="hint">Confirm it yourself: <a id="bscscan-token" href="https://bscscan.com" target="_blank" rel="noopener">open this token on BscScan</a> · <a id="bscscan-wallet" href="https://bscscan.com" target="_blank" rel="noopener">open this wallet on BscScan</a>.</p>
+</div>
+</section>
+<section class="tool-box" aria-label="Full written report">
+<h2>Full written report — $0.01 USDC on Base</h2>
+<p><strong>Price: $0.01 USDC</strong> (10,000 base units) on the Base network, sent to the address below. No account, no email, no KYC — the page checks your payment on the Base blockchain, then enables the report download.</p>
+<p>The report is a written markdown file for the snapshot you just checked: the token and wallet, the balance and share of supply, the total supply, the block, and the RPC used — the same format as the public FlapJax payout audits.</p>
+<p><strong>Pay to:</strong> <code id="payee">0x940Db7cF60E0DE63a5A6fBF3D06290f6e7744B2c</code>
+<button type="button" class="secondary" id="copy-payee">Copy address</button>
+<span id="copy-note" class="hint" hidden>Copied.</span></p>
+<ol>
+<li>Run a snapshot above first (the report is written from that check).</li>
+<li>Send <strong>exactly $0.01 USDC on Base</strong> to the address above from any wallet. (Base network fees are a few cents of ETH — make sure you are on Base, not Ethereum mainnet.)</li>
+<li>Paste the Base transaction hash below and press <strong>Verify payment</strong>.</li>
+<li>When the page confirms the payment on-chain, the report download appears.</li>
+</ol>
+<div class="field-row">
+<label for="payhash"><strong>Base payment transaction hash ($0.01 USDC)</strong></label><br>
+<input type="text" id="payhash" placeholder="0x…" autocomplete="off" spellcheck="false" style="width:100%;box-sizing:border-box;padding:0.5rem 0.6rem;border:1px solid #b9c2cc;border-radius:8px;font:inherit;">
+</div>
+<div class="buttons">
+<button type="button" id="verify-pay">Verify payment</button>
+<button type="button" class="secondary" id="reset-pay">Clear</button>
+</div>
+<p id="pay-status" class="hint" hidden aria-live="polite"></p>
+<p id="pay-error" class="error" hidden></p>
+<p id="report-download" class="match" hidden><strong>Payment confirmed.</strong> <a href="#" id="report-link">Download the full snapshot report (.md)</a></p>
+<p class="hint">If the check fails, you can confirm the payment yourself: <a id="basescan-pay" href="https://basescan.org" target="_blank" rel="noopener">look the hash up on Basescan</a> and check that it sent at least $0.01 USDC to the address above. Underpaying, sending a different token, or sending on the wrong network will not unlock the report.</p>
+<p class="verify"><strong>Honest note about this gate:</strong> this is a light honesty gate. Your payment is verified on-chain and goes straight to the builder's wallet — but the report itself is generated in your browser from the same public chain data the free checker already shows above, so a determined person could write the same report without paying. That is the trade-off for having no accounts, no logins, and no middleman. What the $0.01 buys is the supported path: the verified payment and the formatted report file, ready to file or publish.</p>
+</section>
+
+</main>
+<footer>
+<p>Disclosure: I earn a commission if you sign up through my link. Offers checked October 2026; terms change — verify live terms before signing up.</p>
+<p><a href="index.html">Home</a> · <a href="robinhood-referral.html">Robinhood</a> · <a href="webull-vs-robinhood.html">Webull vs Robinhood</a> · <a href="underdog-california.html">Underdog in California</a> · <a href="polymarket-credit.html">Polymarket</a> · <a href="prediction-markets-compared.html">Prediction Markets Compared</a> · <a href="underdog-refer-a-friend.html">Underdog Refer-a-Friend</a> · <a href="prediction-markets-beginners.html">Prediction Markets Beginners</a> · <a href="free-offers-ranked.html">Free Offers Ranked</a> · <a href="bounties.html">Live Agent Bounties</a> · <a href="webull-referral-explained.html">Webull Referral</a> · <a href="polymarket-feeshare-vs-referral.html">Polymarket Fee-Share</a> · <a href="underdog-predict-explained.html">Underdog Predict</a> · <a href="cashout-calculator.html">Cash-Out Calculator</a> · <a href="referral-estimator.html">Reward Estimator</a> · <a href="settlement-check.html">Settlement Check</a> · <a href="underdog-best-ball.html">Best Ball</a> · <a href="referrals-to-100.html">Referrals to $100</a> · <a href="referral-didnt-arrive.html">Bonus Didn't Arrive</a> · <a href="robinhood-claim-steps.html">Robinhood Claim Steps</a> · <a href="underdog-promo-code-vs-referral.html">Underdog Promo Code vs Referral</a> · <a href="webull-referral-timing.html">Webull Referral Timing</a></p>
+</footer>
+<script src="assets/pay-verify.js"></script>
+<script>
+(function () {
+  var BSC_RPCS = [
+    'https://bsc-dataseed.binance.org/',
+    'https://bsc-dataseed1.defibit.io/',
+    'https://bsc.publicnode.com',
+    'https://1rpc.io/bnb'
+  ];
+  var RPC_TIMEOUT_MS = 15000;
+  var EXAMPLE_TOKEN = '0x90c8889f428F9Ebb77BB8f15CAD3a50a9aC680df'; // FLAPJAX
+  var EXAMPLE_WALLET = '0x7C34E9e21eE28A49Ff0b84B61774119E6633359f'; // FlapJax treasury
+  var EXPECTED = 10000n; // $0.01 USDC, 6 decimals
+  var REPORT_FILENAME = 'bsc-holder-snapshot-report.md';
+
+  var tokenEl = document.getElementById('token');
+  var walletEl = document.getElementById('wallet');
+  var checkStatusEl = document.getElementById('check-status');
+  var checkErrorEl = document.getElementById('check-error');
+  var resultEl = document.getElementById('check-result');
+  var resultBody = document.getElementById('result-body');
+  var verdictEl = document.getElementById('verdict');
+  var payHashEl = document.getElementById('payhash');
+  var payStatusEl = document.getElementById('pay-status');
+  var payErrorEl = document.getElementById('pay-error');
+  var reportEl = document.getElementById('report-download');
+  var reportLink = document.getElementById('report-link');
+  var basescanPayEl = document.getElementById('basescan-pay');
+  var lastCheck = null;
+
+  function showCheckStatus(text, cls) {
+    checkStatusEl.textContent = text;
+    checkStatusEl.className = cls || 'hint';
+    checkStatusEl.hidden = false;
+  }
+  function showPayStatus(text, cls) {
+    payStatusEl.textContent = text;
+    payStatusEl.className = cls || 'hint';
+    payStatusEl.hidden = false;
+  }
+  function isAddress(a) { return typeof a === 'string' && /^0x[0-9a-fA-F]{40}$/.test(a.trim()); }
+  function padAddr(a) { return '000000000000000000000000' + a.toLowerCase().slice(2); }
+  function fmtToken(raw, decimals) {
+    var n = BigInt(raw);
+    var d = BigInt(decimals);
+    var div = 10n ** d;
+    var whole = n / div;
+    var frac = n % div;
+    var fracStr = frac.toString().padStart(Number(d), '0').replace(/0+$/, '');
+    return whole.toString() + (fracStr ? '.' + fracStr : '');
+  }
+  function sharePct(balanceRaw, supplyRaw) {
+    var b = BigInt(balanceRaw), s = BigInt(supplyRaw);
+    if (s === 0n) return 'n/a (total supply is 0)';
+    var bp = (b * 1000000n) / s; // basis points of a percent, 4 decimals
+    var whole = bp / 10000n;
+    var frac = (bp % 10000n).toString().padStart(4, '0');
+    return whole.toString() + '.' + frac + '%';
+  }
+
+  function rpcCall(url, method, params) {
+    var controller;
+    var options = {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: method, params: params })
+    };
+    if (typeof AbortController !== 'undefined') {
+      controller = new AbortController();
+      options.signal = controller.signal;
+      setTimeout(function () { controller.abort(); }, RPC_TIMEOUT_MS);
+    }
+    return fetch(url, options).then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    }).then(function (json) {
+      if (json.error) throw new Error(json.error.message || 'RPC error');
+      return json.result;
+    });
+  }
+  function tryBscRpcs(method, params) {
+    var errors = [];
+    var chain = Promise.reject(new Error('start'));
+    BSC_RPCS.forEach(function (url) {
+      chain = chain.catch(function () {
+        return rpcCall(url, method, params).then(function (result) {
+          return { result: result, rpc: url };
+        }).catch(function (e) {
+          errors.push(url + ': ' + (e && e.message ? e.message : String(e)));
+          throw e;
+        });
+      });
+    });
+    return chain.catch(function () {
+      throw new Error('All BSC RPCs failed: ' + errors.join(' | '));
+    });
+  }
+  function ethCall(to, data) {
+    return tryBscRpcs('eth_call', [{ to: to, data: data }, 'latest']);
+  }
+  function row(label, value, verdict) {
+    var tr = document.createElement('tr');
+    var td1 = document.createElement('td'); td1.textContent = label;
+    var td2 = document.createElement('td'); td2.textContent = value;
+    var td3 = document.createElement('td'); td3.textContent = verdict || '';
+    tr.appendChild(td1); tr.appendChild(td2); tr.appendChild(td3);
+    resultBody.appendChild(tr);
+  }
+
+  document.getElementById('example').addEventListener('click', function () {
+    tokenEl.value = EXAMPLE_TOKEN; walletEl.value = EXAMPLE_WALLET;
+    checkHolder();
+  });
+  document.getElementById('clear-check').addEventListener('click', function () {
+    tokenEl.value = ''; walletEl.value = '';
+    checkStatusEl.hidden = true; checkErrorEl.hidden = true;
+    resultEl.hidden = true; verdictEl.hidden = true; lastCheck = null;
+  });
+  document.getElementById('check').addEventListener('click', function () { checkHolder(); });
+
+  async function checkHolder() {
+    var token = tokenEl.value.trim().toLowerCase();
+    var wallet = walletEl.value.trim().toLowerCase();
+    checkErrorEl.hidden = true; resultEl.hidden = true; verdictEl.hidden = true; lastCheck = null;
+    if (!isAddress(token)) {
+      checkErrorEl.textContent = 'The token address does not look like an address. It should be 0x followed by 40 hex characters.';
+      checkErrorEl.hidden = false; return;
+    }
+    if (!isAddress(wallet)) {
+      checkErrorEl.textContent = 'The wallet address does not look like an address. It should be 0x followed by 40 hex characters.';
+      checkErrorEl.hidden = false; return;
+    }
+    document.getElementById('bscscan-token').href = 'https://bscscan.com/token/' + token;
+    document.getElementById('bscscan-wallet').href = 'https://bscscan.com/address/' + wallet;
+    showCheckStatus('Reading the token from BNB Smart Chain… this usually takes a few seconds.', 'hint');
+    try {
+      var code = await tryBscRpcs('eth_getCode', [token, 'latest']);
+      if (!code.result || code.result === '0x' || code.result === '0x0') {
+        checkErrorEl.textContent = 'There is no contract code at that token address — it is not a token contract. Check the address; it may be a wallet, or copied incompletely.';
+        checkErrorEl.hidden = false; checkStatusEl.hidden = true; return;
+      }
+      var bal = await ethCall(token, '0x70a08231' + padAddr(wallet));
+      var sup = await ethCall(token, '0x18160ddd');
+      var decimals = 18;
+      var decimalsNote = 'defaulted to 18 (decimals() call failed)';
+      try {
+        var dec = await ethCall(token, '0x313ce567');
+        decimals = parseInt(dec.result, 16);
+        if (!isFinite(decimals) || decimals < 0 || decimals > 36) throw new Error('bad decimals');
+        decimalsNote = 'from the contract';
+      } catch (e) { /* keep default 18 */ }
+      var blk = await tryBscRpcs('eth_blockNumber', []);
+      var blockNum = parseInt(blk.result, 16);
+
+      var balanceFmt = fmtToken(bal.result, decimals);
+      var supplyFmt = fmtToken(sup.result, decimals);
+      var share = sharePct(bal.result, sup.result);
+      var balanceRaw = BigInt(bal.result), supplyRaw = BigInt(sup.result);
+      var shareVerdict = '';
+      if (supplyRaw === 0n) shareVerdict = '';
+      else if (balanceRaw === 0n) shareVerdict = 'holds none of this token';
+      else if (balanceRaw * 100n >= supplyRaw * 5n) shareVerdict = 'large holder (5% or more of supply)';
+      else if (balanceRaw * 100n >= supplyRaw) shareVerdict = 'notable holder (1% or more of supply)';
+      else if (balanceRaw * 1000n >= supplyRaw) shareVerdict = 'small holder (0.1% or more of supply)';
+      else shareVerdict = 'very small holder (under 0.1% of supply)';
+
+      resultBody.innerHTML = '';
+      row('Token contract', token, '');
+      row('Wallet', wallet, '');
+      row('Balance (raw)', bal.result, '');
+      row('Balance', balanceFmt, '');
+      row('Total supply', supplyFmt, '');
+      row('Share of supply', share, shareVerdict);
+      row('Token decimals', String(decimals) + ' (' + decimalsNote + ')', '');
+      row('Block', String(blockNum) + ' (read via ' + blk.rpc + ')', '');
+      resultEl.hidden = false;
+      verdictEl.hidden = false;
+      if (balanceRaw === 0n) {
+        verdictEl.textContent = 'Verdict: this wallet holds none of this token at block ' + blockNum + '.';
+      } else {
+        verdictEl.textContent = 'Verdict: this wallet holds ' + balanceFmt + ' of the token — ' + share + ' of total supply — a ' + shareVerdict.toLowerCase() + ' at block ' + blockNum + '.';
+      }
+      verdictEl.className = 'match';
+      showCheckStatus('Done — read from ' + blk.rpc + '.', 'hint');
+      lastCheck = {
+        token: token, wallet: wallet, balanceRaw: bal.result, balance: balanceFmt,
+        supplyRaw: sup.result, supply: supplyFmt, share: share, shareVerdict: shareVerdict,
+        decimals: decimals, block: blockNum, rpc: blk.rpc,
+        checkedAt: new Date().toISOString()
+      };
+    } catch (e) {
+      checkErrorEl.textContent = 'Could not read the token from BNB Smart Chain: ' + (e && e.message ? e.message : String(e)) + '. Wait a minute and try again.';
+      checkErrorEl.hidden = false; checkStatusEl.hidden = true;
+    }
+  }
+
+  function buildReport() {
+    var c = lastCheck;
+    var lines = [];
+    lines.push('# BSC Token Holder Snapshot — written report');
+    lines.push('');
+    lines.push('- Token contract: ' + c.token);
+    lines.push('- Wallet: ' + c.wallet);
+    lines.push('- Balance (raw): ' + c.balanceRaw);
+    lines.push('- Balance: ' + c.balance);
+    lines.push('- Total supply: ' + c.supply);
+    lines.push('- Share of supply: ' + c.share + (c.shareVerdict ? ' (' + c.shareVerdict + ')' : ''));
+    lines.push('- Token decimals: ' + c.decimals);
+    lines.push('- Block: ' + c.block);
+    lines.push('- RPC used: ' + c.rpc);
+    lines.push('- Checked at: ' + c.checkedAt);
+    lines.push('');
+    lines.push('Method: balanceOf and totalSupply were read with eth_call against public BSC RPCs; the share is balance / totalSupply. Holder rank is not included — this check reads one wallet only. A large share of a token nobody wants is still worth nothing; this report is not investment advice.');
+    lines.push('');
+    lines.push('Reference data (October 2026): FLAPJAX total supply 44,444,444,444; top 20 holders own 78.47% of supply at block 129,454,096; the FlapJax treasury held 834,038,663.16 FLAPJAX (1.8766% of supply) when checked October 25, 2026.');
+    return lines.join(String.fromCharCode(10));
+  }
+
+  document.getElementById('copy-payee').addEventListener('click', function () {
+    var addr = document.getElementById('payee').textContent.trim();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(addr).then(function () {
+        document.getElementById('copy-note').hidden = false;
+      });
+    }
+  });
+  document.getElementById('reset-pay').addEventListener('click', function () {
+    payHashEl.value = ''; payStatusEl.hidden = true; payErrorEl.hidden = true;
+    reportEl.hidden = true;
+  });
+  document.getElementById('verify-pay').addEventListener('click', function () {
+    payErrorEl.hidden = true; reportEl.hidden = true;
+    var hash = payHashEl.value.trim().toLowerCase();
+    if (!PayVerify.isValidTxHash(hash)) {
+      payErrorEl.textContent = 'That does not look like a transaction hash. It should be 0x followed by 64 hex characters.';
+      payErrorEl.hidden = false;
+      return;
+    }
+    if (!lastCheck) {
+      payErrorEl.textContent = 'Run a snapshot above first — the report is written from that check.';
+      payErrorEl.hidden = false;
+      return;
+    }
+    basescanPayEl.href = 'https://basescan.org/tx/' + hash;
+    showPayStatus('Checking the payment on Base… this usually takes a few seconds.', 'hint');
+    PayVerify.verifyPayment({ txHash: hash, expectedAmount: EXPECTED }).then(function (res) {
+      if (!res.ok) {
+        showPayStatus('', 'hint');
+        payErrorEl.textContent = 'Payment not confirmed: ' + (res.reason || 'unknown') +
+          (res.details ? ' — ' + res.details : '') +
+          '. Check the amount (exactly $0.01 USDC), the network (Base), and the recipient address, then try again.';
+        payErrorEl.hidden = false;
+        return;
+      }
+      showPayStatus('Payment confirmed on Base at block ' + res.blockNumber + '. The report download is ready.', 'match');
+      reportEl.hidden = false;
+      reportLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        var blob = new Blob([buildReport()], { type: 'text/markdown' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url; a.download = REPORT_FILENAME;
+        document.body.appendChild(a); a.click(); a.remove();
+        setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+      }, { once: true });
+    }).catch(function (e) {
+      showPayStatus('', 'hint');
+      payErrorEl.textContent = 'Could not reach Base RPCs to verify the payment: ' + (e && e.message ? e.message : String(e)) + '. Wait a minute and try again, or check the hash on Basescan.';
+      payErrorEl.hidden = false;
+    });
+  });
+
+})();
+
+</script>
+</body>
+</html>
