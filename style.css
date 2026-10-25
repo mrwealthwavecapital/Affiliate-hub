@@ -14,6 +14,41 @@ th { background: #f2f2f2; }
 h1 { font-size: 1.9rem; line-height: 1.25; }
 h2 { margin-top: 2rem; font-size: 1.35rem; }
 footer { border-top: 1px solid #ddd; font-size: 0.9rem; color: #444; }
+/* --- Micro-tools (cash-out calculator, estimator, settlement check) --- */
+.tool-box { background: #fff; border: 1px solid #dfe4ea; border-radius: 12px; padding: 1rem 1.1rem; margin-top: 1rem; }
+fieldset { border: 0; margin: 0; padding: 0; }
+legend { font-weight: 700; margin-bottom: 0.6rem; padding: 0; }
+.platforms { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+@media (max-width: 520px) { .platforms { grid-template-columns: 1fr; } }
+.platform-card { display: flex; flex-direction: column; gap: 2px; border: 2px solid #dfe4ea; border-radius: 10px; padding: 0.75rem; cursor: pointer; }
+.platform-card:has(input:checked) { border-color: #0b5cab; background: #eef5ff; }
+.platform-card input { accent-color: #0b5cab; }
+.platform-name { font-weight: 700; }
+.platform-reward { font-size: 0.88rem; color: #444; }
+.date-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin-top: 1rem; }
+.date-row label, .field-row label { font-weight: 700; }
+.field-row { margin-top: 1rem; }
+.field-row select, .field-row input[type="number"], .field-row input[type="date"], input[type="date"], select { font: inherit; padding: 0.5rem 0.6rem; border: 1px solid #b9c2cc; border-radius: 8px; background: #fff; max-width: 100%; }
+.hint { font-size: 0.88rem; color: #444; margin-top: 0.5rem; }
+.buttons { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.9rem; }
+button { font: inherit; font-weight: 700; cursor: pointer; border: 0; border-radius: 8px; padding: 0.75rem 1.1rem; background: #0b5cab; color: #fff; }
+button.secondary { background: #e8edf2; color: #1a1a1a; }
+button:hover { filter: brightness(0.94); }
+.error { color: #b42318; font-weight: 700; margin-top: 0.75rem; }
+.results h2 { margin-top: 0; }
+.qualified { color: #444; }
+.timeline { border-top: 1px solid #dfe4ea; margin-top: 0.75rem; }
+.row { display: grid; grid-template-columns: 190px 1fr; gap: 0.75rem; padding: 0.75rem 0; border-bottom: 1px solid #eef1f4; }
+@media (max-width: 520px) { .row { grid-template-columns: 1fr; gap: 2px; } }
+.row-label { font-weight: 700; }
+.row-note { font-size: 0.88rem; color: #444; margin-top: 2px; }
+.no-date { color: #b42318; font-weight: 700; }
+.warnings li { margin-bottom: 0.4rem; }
+.verify { font-size: 0.85rem; color: #444; background: #fff8e1; border: 1px solid #e6c200; border-radius: 8px; padding: 0.6rem 0.75rem; }
+.tagline { font-size: 1.05rem; color: #444; }
+.match { border-left: 4px solid #0b5cab; padding-left: 0.75rem; margin: 1rem 0; }
+.match.unverified { border-left-color: #b42318; }
+.match h3 { margin-top: 0; }
 @media (max-width: 640px) {
   h1 { font-size: 1.55rem; }
   table, thead, tbody, th, td, tr { display: block; }

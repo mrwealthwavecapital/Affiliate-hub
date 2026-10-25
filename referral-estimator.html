@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Referral Reward Estimator — What N Friends Actually Earn You</title>
+<meta name="description" content="Pick a platform and how many friends you could refer, and see the expected reward range and the cash-out path — using only figures verified in October 2026, with every conflict flagged.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<nav aria-label="Site">
+<a href="index.html">Home</a>
+<a href="robinhood-referral.html">Robinhood Referral</a>
+<a href="webull-vs-robinhood.html">Webull vs Robinhood</a>
+<a href="underdog-california.html">Underdog in California</a>
+<a href="polymarket-credit.html">Polymarket Credit</a>
+<a href="prediction-markets-compared.html">Prediction Markets Compared</a>
+<a href="underdog-refer-a-friend.html">Underdog Refer-a-Friend</a>
+<a href="prediction-markets-beginners.html">Prediction Markets Beginners</a>
+<a href="free-offers-ranked.html">Free Offers Ranked</a>
+<a href="bounties.html">Live Agent Bounties</a>
+<a href="webull-referral-explained.html">Webull Referral Explained</a>
+<a href="polymarket-feeshare-vs-referral.html">Polymarket Fee-Share vs Referral</a>
+<a href="underdog-predict-explained.html">Underdog Predict Explained</a>
+<a href="cashout-calculator.html">Cash-Out Calculator</a>
+<a href="referral-estimator.html">Reward Estimator</a>
+<a href="settlement-check.html">Settlement Check</a>
+<a href="underdog-best-ball.html">Underdog Best Ball</a>
+<a href="referrals-to-100.html">Referrals to $100</a>
+<a href="referral-didnt-arrive.html">Bonus Didn't Arrive</a>
+</nav>
+<h1>Referral Reward Estimator</h1>
+<p class="tagline">Pick a platform, say how many friends you could realistically refer, and see what that is actually worth — and whether it ever becomes cash you can withdraw.</p>
+</header>
+<main>
+<div class="disclosure" role="note">
+<p><strong>Disclosure:</strong> I earn a commission if you sign up through my link. Every figure below comes from research checked in October 2026. Where sources conflict, the conflict is shown as a range — <strong>verify live terms before acting</strong>. Nothing here is a promise of earnings.</p>
+</div>
+
+<section class="tool-box" aria-label="Estimator">
+<fieldset>
+<legend>1. Which platform's referral program?</legend>
+<div class="platforms">
+<label class="platform-card"><input type="radio" name="platform" value="robinhood" checked><span class="platform-name">Robinhood</span><span class="platform-reward">Milestone bonuses for the referrer</span></label>
+<label class="platform-card"><input type="radio" name="platform" value="webull"><span class="platform-name">Webull</span><span class="platform-reward">Fractional shares, typically ~$3 each</span></label>
+<label class="platform-card"><input type="radio" name="platform" value="underdog"><span class="platform-name">Underdog</span><span class="platform-reward">$10 in bonus entries per friend</span></label>
+<label class="platform-card"><input type="radio" name="platform" value="polymarket"><span class="platform-name">Polymarket US</span><span class="platform-reward">$25 trading credit per referral</span></label>
+</div>
+</fieldset>
+<div class="field-row">
+<label for="friends">2. How many friends would actually qualify?</label>
+<input type="number" id="friends" min="1" max="500" value="5">
+<p class="hint">Count only friends who would finish the whole qualifying step (open the account, link a bank, and deposit). A signup that never deposits earns nothing on every platform here.</p>
+</div>
+<div class="buttons">
+<button type="button" id="estimate">Estimate my reward</button>
+</div>
+<p id="form-error" class="error" hidden></p>
+</section>
+
+<section id="results" class="tool-box results" hidden aria-live="polite"></section>
+
+<section>
+<h2>How each estimate is built</h2>
+<ul>
+<li><strong>Robinhood:</strong> since September 2026 the referrer earns milestones only — $50 at 1 funded referral, $150 at 3, $800 at 10, $4,000 at 50, $10,000 at 200 — with a $15,000/year cap. The research does not say whether milestones add up, so this estimator reports only the highest milestone you reach, never a sum. Older sources cite a $1,500/year cap; the milestone structure is the newer figure. The friend usually gets a $5 stock (range $5–$200).</li>
+<li><strong>Webull:</strong> the referrer gets fractional shares per successful referral, typically worth about $3 (about 98% of awarded shares are about $3; range $3–$300). Some sources describe "up to 20 free stocks" — flagged as a conflict, not used as the estimate. The friend must deposit $100+ within 30 days and open a standard brokerage account; prediction-only signups do not trigger it.</li>
+<li><strong>Underdog:</strong> $10 in bonus entries per referred friend (some guides report $10–$25 by campaign; $10 is the consistent baseline), plus a 1-in-1,000 shot at a $2,000 jackpot per referral. Bonus entries are never cash and expire in 14 days.</li>
+<li><strong>Polymarket US:</strong> $25 in trading credit per referral, for the referrer and the friend, after the friend deposits $10 — up to 50 referrals ($1,250 total). One source reports a $350 cap instead; flagged as a conflict. The credit is trading-only and can never be withdrawn as cash directly.</li>
+</ul>
+<p>All figures checked October 2026. <strong>Verify live terms before acting.</strong></p>
+</section>
+
+<section>
+<h2>Referral links</h2>
+<p class="link-note">Disclosure: I earn a commission if you sign up through my link.</p>
+<ul>
+<li>Robinhood: <a href="https://join.robinhood.com/eugeneh388" rel="sponsored">Join Robinhood via my referral link</a> <span class="link-note">(Disclosure: I earn a commission if you sign up through my link.)</span></li>
+<li>Webull: <a href="https://www.webull.com/s/3KhrHVv3gsDjOv2xq5" rel="sponsored">Join Webull via my referral link</a> <span class="link-note">(Disclosure: I earn a commission if you sign up through my link.)</span></li>
+<li>Underdog: <a href="https://play.underdogsports.com/vgwg/oe6wffo1" rel="sponsored">Join Underdog via my referral link</a> <span class="link-note">(Disclosure: I earn a commission if you sign up through my link.) 18+. If gambling stops being fun, call 1-800-GAMBLER. California: DFS drafts/Best Ball/Champions and Underdog Predict only.</span></li>
+<li>Polymarket US: <a href="https://polymarket.us/join/stackbundlez" rel="sponsored">Join Polymarket US via my referral link</a> <span class="link-note">(Disclosure: I earn a commission if you sign up through my link.) 18+. Trading involves risk; only trade money you can afford to lose. If gambling stops being fun, call 1-800-GAMBLER.</span></li>
+</ul>
+<p>Also see the <a href="cashout-calculator.html">cash-out calculator</a> (when each reward becomes usable) and <a href="referrals-to-100.html">how many referrals it takes to make $100</a>.</p>
+<p><em>Last checked: October 2026. Terms change — check live terms. This tool runs entirely in your browser: it makes no network requests and stores nothing.</em></p>
+</section>
+</main>
+<footer>
+<p>Disclosure: I earn a commission if you sign up through my link. Offers checked October 2026; terms change — verify live terms before signing up.</p>
+<p><a href="index.html">Home</a> · <a href="robinhood-referral.html">Robinhood</a> · <a href="webull-vs-robinhood.html">Webull vs Robinhood</a> · <a href="underdog-california.html">Underdog in California</a> · <a href="polymarket-credit.html">Polymarket</a> · <a href="prediction-markets-compared.html">Prediction Markets Compared</a> · <a href="underdog-refer-a-friend.html">Underdog Refer-a-Friend</a> · <a href="prediction-markets-beginners.html">Prediction Markets Beginners</a> · <a href="free-offers-ranked.html">Free Offers Ranked</a> · <a href="bounties.html">Live Agent Bounties</a> · <a href="webull-referral-explained.html">Webull Referral</a> · <a href="polymarket-feeshare-vs-referral.html">Polymarket Fee-Share</a> · <a href="underdog-predict-explained.html">Underdog Predict</a> · <a href="cashout-calculator.html">Cash-Out Calculator</a> · <a href="referral-estimator.html">Reward Estimator</a> · <a href="settlement-check.html">Settlement Check</a> · <a href="underdog-best-ball.html">Best Ball</a> · <a href="referrals-to-100.html">Referrals to $100</a> · <a href="referral-didnt-arrive.html">Bonus Didn't Arrive</a></p>
+</footer>
+<script>
+"use strict";
+/* Referral Reward Estimator — figures ONLY from ~/workspace/income-plan/affiliate-research.md
+   and affiliate-links.md (Oct 2026). Conflicts are shown, never smoothed over. */
+
+const MILESTONES = [
+  { at: 1, amount: 50 }, { at: 3, amount: 150 }, { at: 10, amount: 800 },
+  { at: 50, amount: 4000 }, { at: 200, amount: 10000 },
+];
+
+const PLATFORMS = {
+  robinhood: {
+    name: "Robinhood",
+    referralUrl: "https://join.robinhood.com/eugeneh388",
+    referralLabel: "Sign up for Robinhood through this referral link",
+    compute(n) {
+      let reached = null;
+      for (const m of MILESTONES) if (n >= m.at) reached = m;
+      const rows = [];
+      if (reached) {
+        rows.push({ label: "Highest milestone you reach", value: "$" + reached.amount.toLocaleString("en-US") + " at " + reached.at + " funded referral" + (reached.at > 1 ? "s" : ""), note: "Milestone bonuses since September 2026: $50 at 1, $150 at 3, $800 at 10, $4,000 at 50, $10,000 at 200." });
+      } else {
+        rows.push({ label: "Highest milestone you reach", value: "None yet", note: "The first milestone pays $50 at 1 funded referral." });
+      }
+      rows.push({ label: "What this estimate does NOT do", value: "It does not add milestones together", note: "The research does not say whether milestones stack. If they do stack, the total would be higher than the single highest milestone shown above. Check Robinhood's live referral terms before counting on a total." });
+      rows.push({ label: "Annual cap", value: "$15,000 per year (newer figure)", note: "Conflict flagged: older sources cite a $1,500/year cap. The milestone structure (Sept 2026) is the newer figure — verify live terms." });
+      rows.push({ label: "What each friend gets", value: "A free stock, usually $5 (range $5–$200)", note: "Published odds: ~99% $5, 0.9% $10, 0.1% $200." });
+      rows.push({ label: "Cash-out path", value: "Stock sellable after 3 trading days; cash withdrawable 30 days after deposit; claim within 60 days", note: "The stock is real value, but it is not same-day cash." });
+      const next = MILESTONES.find((m) => m.at > n);
+      return {
+        rows,
+        explanation: next
+          ? "With " + n + " qualifying referral" + (n > 1 ? "s" : "") + ", your highest milestone is " + (reached ? "$" + reached.amount.toLocaleString("en-US") : "$0") + ". " + (next.at - n) + " more qualifying referral" + (next.at - n > 1 ? "s" : "") + " would reach the $" + next.amount.toLocaleString("en-US") + " milestone at " + next.at + "."
+          : "With " + n + " qualifying referrals you have reached the highest published milestone ($10,000 at 200). No higher milestone is published in the October 2026 research; the $15,000/year cap is the remaining ceiling.",
+        warnings: [
+          "A referral only counts when the friend is new, approved, links a bank, and makes a qualifying deposit.",
+          "Milestones are the referrer's reward. Do not confuse them with the friend's $5 stock.",
+        ],
+      };
+    },
+  },
+  webull: {
+    name: "Webull",
+    referralUrl: "https://www.webull.com/s/3KhrHVv3gsDjOv2xq5",
+    referralLabel: "Sign up for Webull through this referral link",
+    compute(n) {
+      const typical = 3 * n;
+      return {
+        rows: [
+          { label: "Typical total", value: "About $" + typical.toLocaleString("en-US") + " in fractional shares", note: "About $3 per successful referral (about 98% of awarded shares are about $3)." },
+          { label: "Theoretical range", value: "$" + (3 * n).toLocaleString("en-US") + " – $" + (300 * n).toLocaleString("en-US"), note: "Each referral's shares are worth $3–$300. The top of the range would need every referral to draw a high-value share — do not plan on it." },
+          { label: "Conflicting figure", value: "Some sources say \u201cup to 20 free stocks\u201d", note: "Flagged, not used: the October 2026 research reports fractional shares typically worth about $3. Check Webull's live referral terms for the current campaign." },
+          { label: "Cash-out path", value: "Shares post within ~10 days; claim in-app within 30 days of issue", note: "Sell/withdraw timing was not stated in the verified October 2026 terms — check Webull's live terms; do not assume Robinhood's 3-day / 30-day windows." },
+        ],
+        explanation: "With " + n + " qualifying referral" + (n > 1 ? "s" : "") + ", expect about $" + typical.toLocaleString("en-US") + " in fractional shares in total — roughly $3 each. The shares have real value, but each friend must open a standard brokerage account and deposit $100+ within 30 days, and prediction-only signups earn nothing.",
+        warnings: [
+          "Prediction-markets-only signups do NOT trigger the referral.",
+          "Joint, IRA, and entity accounts are excluded.",
+        ],
+      };
+    },
+  },
+  underdog: {
+    name: "Underdog",
+    referralUrl: "https://play.underdogsports.com/vgwg/oe6wffo1",
+    referralLabel: "Sign up for Underdog through this referral link",
+    compute(n) {
+      return {
+        rows: [
+          { label: "Bonus entries you earn", value: "$" + (10 * n).toLocaleString("en-US") + " in bonus entries", note: "$10 per referred friend. Some guides report $10–$25 by campaign; $10 is the consistent baseline." },
+          { label: "Jackpot chance", value: "1-in-1,000 per referral — about $2 of expected value each", note: "Each referral also carries a 1-in-1,000 chance the bonus is $2,000 instead of $10. Expected value is $2 per referral on average across many referrals; any single referral is almost certainly $10." },
+          { label: "Cash-out path", value: "Never cash", note: "Bonus entries are not cash and cannot be withdrawn. They must be played, and they expire 14 days after being credited. Only winnings from contests entered with them can become cash." },
+        ],
+        explanation: "With " + n + " qualifying friend" + (n > 1 ? "s" : "") + " you earn $" + (10 * n).toLocaleString("en-US") + " in bonus entries to play with — real contest value, but never money in your bank account. Each friend must deposit $10 (several guides add: and play once), and the entries land within about 72 hours.",
+        warnings: [
+          "California: no Underdog sportsbook — drafts, Best Ball, Champions, and Predict only. You must be 18+. If gambling stops being fun, call 1-800-GAMBLER.",
+          "One bonus per friend. The friend's welcome offer (commonly Play $5, Get $50) is separate.",
+        ],
+      };
+    },
+  },
+  polymarket: {
+    name: "Polymarket US",
+    referralUrl: "https://polymarket.us/join/stackbundlez",
+    referralLabel: "Sign up for Polymarket US through this referral link",
+    compute(n) {
+      const counted = Math.min(n, 50);
+      return {
+        rows: [
+          { label: "Trading credit you earn", value: "$" + (25 * counted).toLocaleString("en-US") + " in trading credit" + (n > 50 ? " (capped — see below)" : ""), note: "$25 per referral, up to 50 referrals ($1,250 total)." },
+          { label: "Cap conflict", value: "One source reports a $350 cap instead of $1,250", note: "Flagged, not smoothed over: the $1,250 figure (50 referrals × $25) is the one in the October 2026 research summary; check Polymarket's live terms." },
+          { label: "Cash-out path", value: "Never cash directly", note: "The credit is trading-only. It must be traded first — only proceeds above the credit from those trades may be withdrawable, per live terms." },
+          { label: "What each friend gets", value: "$25 trading credit after depositing $10", note: "Credit is added within ~7 days of qualifying. Its expiry length differs across sources — no single length is verified." },
+        ],
+        explanation: "With " + n + " qualifying referral" + (n > 1 ? "s" : "") + ", you earn $" + (25 * counted).toLocaleString("en-US") + " in trading credit" + (n > 50 ? " — the program caps at 50 referrals, so referrals beyond 50 earn no additional credit" : "") + ". The credit is useful only for trading; it can never be withdrawn as cash itself.",
+        warnings: [
+          "This is the US refer-a-friend program. It is separate from Polymarket's fee-share program, which needs $10,000 of lifetime trading volume before it pays anything.",
+          "18+. Trading involves risk; only trade money you can afford to lose. If gambling stops being fun, call 1-800-GAMBLER.",
+        ],
+      };
+    },
+  },
+};
+
+function compute(platformKey, n) {
+  const p = PLATFORMS[platformKey];
+  if (!p) return { error: "Unknown platform: " + platformKey };
+  if (!Number.isFinite(n) || n < 1 || Math.floor(n) !== n) {
+    return { error: "Enter a whole number of friends, 1 or more." };
+  }
+  const result = p.compute(n);
+  return { platform: p.name, n, rows: result.rows, explanation: result.explanation, warnings: result.warnings, referralUrl: p.referralUrl, referralLabel: p.referralLabel };
+}
+
+if (typeof document !== "undefined") {
+  document.addEventListener("DOMContentLoaded", () => {
+    const input = document.getElementById("friends");
+    const resultsEl = document.getElementById("results");
+    const errorEl = document.getElementById("form-error");
+    function selectedPlatform() {
+      const c = document.querySelector('input[name="platform"]:checked');
+      return c ? c.value : null;
+    }
+    function render(result) {
+      errorEl.textContent = "";
+      errorEl.hidden = true;
+      const rowsHtml = result.rows.map((r) =>
+        `<div class="row"><div class="row-label">${r.label}</div><div class="row-value"><strong>${r.value}</strong>${r.note ? `<div class="row-note">${r.note}</div>` : ""}</div></div>`).join("");
+      const warningsHtml = result.warnings.map((w) => `<li>${w}</li>`).join("");
+      resultsEl.innerHTML = `
+        <h2>${result.platform} — ${result.n} qualifying referral${result.n > 1 ? "s" : ""}</h2>
+        <div class="timeline">${rowsHtml}</div>
+        <h3>What this means, plainly</h3>
+        <p>${result.explanation}</p>
+        <h3>Conflicts and catches — read these</h3>
+        <ul class="warnings">${warningsHtml}</ul>
+        <p class="referral"><a href="${result.referralUrl}" rel="sponsored">${result.referralLabel}</a></p>
+        <p class="verify">Verify live terms before acting — referral terms change often, and this estimator uses terms verified in October 2026. This page links to referral offers; the maker may earn a commission if you sign up through a referral link.</p>`;
+      resultsEl.hidden = false;
+      resultsEl.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    function estimate() {
+      const result = compute(selectedPlatform(), Number(input.value));
+      if (result.error) {
+        errorEl.textContent = result.error;
+        errorEl.hidden = false;
+        resultsEl.hidden = true;
+        return;
+      }
+      render(result);
+    }
+    document.getElementById("estimate").addEventListener("click", estimate);
+    document.querySelectorAll('input[name="platform"]').forEach((r) =>
+      r.addEventListener("change", () => { if (!resultsEl.hidden) estimate(); }));
+  });
+}
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = { compute, PLATFORMS, MILESTONES };
+}
+</script>
+</body>
+</html>

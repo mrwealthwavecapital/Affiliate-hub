@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Referral Cash-Out Calculator — When Can I Actually Get the Money?</title>
+<meta name="description" content="Pick a referral offer, enter the date you qualified, and see what you earned, when you can sell, when cash is withdrawable, and when it expires. Terms verified October 2026.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<nav aria-label="Site">
+<a href="index.html">Home</a>
+<a href="robinhood-referral.html">Robinhood Referral</a>
+<a href="webull-vs-robinhood.html">Webull vs Robinhood</a>
+<a href="underdog-california.html">Underdog in California</a>
+<a href="polymarket-credit.html">Polymarket Credit</a>
+<a href="prediction-markets-compared.html">Prediction Markets Compared</a>
+<a href="underdog-refer-a-friend.html">Underdog Refer-a-Friend</a>
+<a href="prediction-markets-beginners.html">Prediction Markets Beginners</a>
+<a href="free-offers-ranked.html">Free Offers Ranked</a>
+<a href="bounties.html">Live Agent Bounties</a>
+<a href="webull-referral-explained.html">Webull Referral Explained</a>
+<a href="polymarket-feeshare-vs-referral.html">Polymarket Fee-Share vs Referral</a>
+<a href="underdog-predict-explained.html">Underdog Predict Explained</a>
+<a href="cashout-calculator.html">Cash-Out Calculator</a>
+<a href="referral-estimator.html">Reward Estimator</a>
+<a href="settlement-check.html">Settlement Check</a>
+<a href="underdog-best-ball.html">Underdog Best Ball</a>
+<a href="referrals-to-100.html">Referrals to $100</a>
+<a href="referral-didnt-arrive.html">Bonus Didn't Arrive</a>
+</nav>
+<h1>Referral Cash-Out Calculator</h1>
+<p class="tagline">You signed up through a referral link. Now the real question: <strong>when can you actually get the money?</strong></p>
+</header>
+<main>
+<div class="disclosure" role="note">
+<p><strong>Disclosure:</strong> I earn a commission if you sign up through my link. This page links to referral offers. Terms change often — <strong>verify live terms before acting</strong>. All figures below were verified in October 2026.</p>
+</div>
+
+  
+
+  <section class="calculator" aria-label="Calculator">
+    <fieldset>
+      <legend>1. Which offer did you sign up for?</legend>
+      <div class="platforms">
+        <label class="platform-card">
+          <input type="radio" name="platform" value="robinhood" checked>
+          <span class="platform-name">Robinhood</span>
+          <span class="platform-reward">Free stock, usually $5</span>
+        </label>
+        <label class="platform-card">
+          <input type="radio" name="platform" value="webull">
+          <span class="platform-name">Webull</span>
+          <span class="platform-reward">Fractional shares, typically ~$3</span>
+        </label>
+        <label class="platform-card">
+          <input type="radio" name="platform" value="underdog">
+          <span class="platform-name">Underdog</span>
+          <span class="platform-reward">$10 in bonus entries</span>
+        </label>
+        <label class="platform-card">
+          <input type="radio" name="platform" value="polymarket">
+          <span class="platform-name">Polymarket US</span>
+          <span class="platform-reward">$25 trading credit</span>
+        </label>
+      </div>
+    </fieldset>
+
+    <div class="date-row">
+      <label for="qualify-date" id="qualify-label">Date your deposit settled:</label>
+      <input type="date" id="qualify-date" required>
+    </div>
+    <p class="hint">The qualifying date is the date your deposit settled (Robinhood), you deposited $100+ (Webull), or you deposited $10 (Underdog / Polymarket US). Not sure of the exact day? Use your best guess — the dates shift with it.</p>
+
+    <div class="buttons">
+      <button type="button" id="calculate">Calculate my cash-out dates</button>
+      <button type="button" id="today-btn" class="secondary">I signed up today</button>
+    </div>
+    <p id="form-error" class="error" hidden></p>
+  </section>
+
+  <section id="results" class="results" hidden aria-live="polite"></section>
+
+  <section class="links">
+    <h2>All four referral offers</h2>
+    <ul>
+      <li><a href="https://join.robinhood.com/eugeneh388" rel="sponsored">Robinhood referral — free stock, usually $5</a></li>
+      <li><a href="https://www.webull.com/s/3KhrHVv3gsDjOv2xq5" rel="sponsored">Webull referral — fractional shares, typically ~$3</a></li>
+      <li><a href="https://play.underdogsports.com/vgwg/oe6wffo1" rel="sponsored">Underdog refer-a-friend — $10 in bonus entries</a></li>
+      <li><a href="https://polymarket.us/join/stackbundlez" rel="sponsored">Polymarket US refer-a-friend — $25 trading credit</a></li>
+    </ul>
+    <p class="disclosure">Disclosure: these are referral links, and the maker may earn a commission if you sign up through one. Underdog in California: drafts, Best Ball, Champions, and Predict only — no sportsbook. You must be 18+. If gambling stops being fun, call 1-800-GAMBLER.</p>
+  </section>
+
+  <section class="about">
+    <h2>How this calculator works</h2>
+    <ul>
+      <li><strong>Robinhood:</strong> stock sellable after 3 trading days (shown as ≈ 3 business days — weekends and market holidays shift it); cash withdrawable 30 days after your deposit; claim the stock within 60 days.</li>
+      <li><strong>Webull:</strong> deposit $100+ within 30 days of signup; shares post within ~10 days; claim in-app within 30 days of issue. The verified terms state no sell date or cash-withdrawal date, so none is shown.</li>
+      <li><strong>Underdog:</strong> $10 in bonus entries credited ~72 hours after your $10 deposit; entries expire 14 days after crediting and are never withdrawable cash.</li>
+      <li><strong>Polymarket US:</strong> $25 trading credit added within ~7 days of your $10 deposit; trading-only, never withdrawable as cash. The credit's expiry length differs across sources, so no expiry date is shown.</li>
+    </ul>
+    <p>Where sources conflict — the Robinhood annual cap, the Webull reward size, the Polymarket credit expiry — the conflict is shown on the result, not smoothed over. Figures verified October 2026; <strong>verify live terms before acting</strong>.</p>
+  </section>
+
+  
+
+<p><em>Last checked: October 2026. Terms change — check live terms. This tool runs entirely in your browser: it makes no network requests and stores nothing.</em></p>
+</main>
+<footer>
+<p>Disclosure: I earn a commission if you sign up through my link. Offers checked October 2026; terms change — verify live terms before signing up.</p>
+<p><a href="index.html">Home</a> · <a href="robinhood-referral.html">Robinhood</a> · <a href="webull-vs-robinhood.html">Webull vs Robinhood</a> · <a href="underdog-california.html">Underdog in California</a> · <a href="polymarket-credit.html">Polymarket</a> · <a href="prediction-markets-compared.html">Prediction Markets Compared</a> · <a href="underdog-refer-a-friend.html">Underdog Refer-a-Friend</a> · <a href="prediction-markets-beginners.html">Prediction Markets Beginners</a> · <a href="free-offers-ranked.html">Free Offers Ranked</a> · <a href="bounties.html">Live Agent Bounties</a> · <a href="webull-referral-explained.html">Webull Referral</a> · <a href="polymarket-feeshare-vs-referral.html">Polymarket Fee-Share</a> · <a href="underdog-predict-explained.html">Underdog Predict</a> · <a href="cashout-calculator.html">Cash-Out Calculator</a> · <a href="referral-estimator.html">Reward Estimator</a> · <a href="settlement-check.html">Settlement Check</a> · <a href="underdog-best-ball.html">Best Ball</a> · <a href="referrals-to-100.html">Referrals to $100</a> · <a href="referral-didnt-arrive.html">Bonus Didn't Arrive</a></p>
+</footer>
+<script>
+/**
+ * Referral Cash-Out Calculator — date logic.
+ *
+ * Terms source: ~/workspace/income-plan/affiliate-research.md (Oct 2026).
+ * ONLY the figures in that research are used. Where sources conflict, the
+ * conflict is shown to the user, never smoothed over. Nothing here is
+ * financial advice; every result tells the user to verify live terms.
+ *
+ * Works in a browser (vanilla, no dependencies) and in Node for testing:
+ * `node -e "const c = require('./app.js'); ..."` — the export guard at the
+ * bottom only runs under Node.
+ */
+
+"use strict";
+
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+/** Parse a "YYYY-MM-DD" date input into a local-midnight Date (no TZ shift). */
+function parseDate(iso) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || "");
+  if (!m) return null;
+  const d = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+  if (d.getFullYear() !== Number(m[1]) || d.getMonth() !== Number(m[2]) - 1 || d.getDate() !== Number(m[3])) return null;
+  return d;
+}
+
+/** "YYYY-MM-DD" for a Date (local). */
+function isoDate(d) {
+  const p = (n) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+}
+
+/** "Tue, Oct 6, 2026" — manual names so output is identical everywhere. */
+function fmtDate(d) {
+  if (!d) return null;
+  return `${DAYS[d.getDay()]}, ${MONTHS[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
+}
+
+function addDays(d, n) {
+  const out = new Date(d.getTime());
+  out.setDate(out.getDate() + n);
+  return out;
+}
+
+/**
+ * Add n business days (Mon–Fri). Weekends are skipped; public holidays are
+ * NOT accounted for — the result is an approximation and is labelled as such
+ * wherever it is shown.
+ */
+function addBusinessDays(d, n) {
+  const out = new Date(d.getTime());
+  let remaining = n;
+  while (remaining > 0) {
+    out.setDate(out.getDate() + 1);
+    if (out.getDay() !== 0 && out.getDay() !== 6) remaining--;
+  }
+  return out;
+}
+
+function todayIso() {
+  return isoDate(new Date());
+}
+
+// ---------------------------------------------------------------------------
+// Platform terms (Oct 2026 research only)
+// ---------------------------------------------------------------------------
+const PLATFORMS = {
+  robinhood: {
+    name: "Robinhood",
+    shortName: "Robinhood",
+    reward: "Free stock — usually $5 (published odds: ~99% $5, 0.9% $10, 0.1% $200; range $5–$200).",
+    qualifyingLabel: "Date your deposit settled",
+    referralUrl: "https://join.robinhood.com/eugeneh388",
+    referralLabel: "Sign up for Robinhood through this referral link",
+    compute(q) {
+      const sellable = addBusinessDays(q, 3);
+      return {
+        rows: [
+          { label: "What you earn", value: this.reward, kind: "text" },
+          { label: "Earliest you can sell the stock", value: fmtDate(sellable), note: "3 trading days after your deposit ≈ 3 business days. Weekends and market holidays shift it — this is an approximation, not the exchange calendar." },
+          { label: "Earliest you can withdraw cash", value: fmtDate(addDays(q, 30)), note: "30 calendar days after your deposit." },
+          { label: "Claim the reward by", value: fmtDate(addDays(q, 60)), note: "You must claim the free stock within 60 days or it lapses." },
+          { label: "Expiry of the reward itself", value: "No expiry stated once claimed", note: "The 60-day clock is the claim deadline, not a use-it-or-lose-it date on the stock." },
+        ],
+        explanation:
+          "Your free stock arrives once your deposit settles. You can sell it after 3 trading days, but the cash from the sale is only withdrawable 30 days after your deposit. Claim the stock within 60 days — after that the offer lapses. The stock itself, once claimed, has no expiry stated in the terms.",
+        warnings: [
+          "Figure conflict: the Sept 2026 milestone structure caps referrer rewards at $15,000/yr; older sources cite a $1,500/yr cap. The milestone structure is the newer figure — verify live terms.",
+          "You must be a new customer, approved, with a linked bank and a settled deposit for the referral to count.",
+        ],
+      };
+    },
+  },
+
+  webull: {
+    name: "Webull",
+    shortName: "Webull",
+    reward: "Fractional shares — typically ~$3 (welcome offer: 10 fractional shares, $3–$300 each, ~98% at $3), plus 1 month of Premium.",
+    qualifyingLabel: "Date you deposited $100+",
+    referralUrl: "https://www.webull.com/s/3KhrHVv3gsDjOv2xq5",
+    referralLabel: "Sign up for Webull through this referral link",
+    compute(q) {
+      const posts = addDays(q, 10);
+      return {
+        rows: [
+          { label: "What you earn", value: this.reward, kind: "text" },
+          { label: "Reward posts (approx.)", value: fmtDate(posts), note: "Rewards post within ~10 days of your deposit." },
+          { label: "Claim the reward by", value: fmtDate(addDays(posts, 30)), note: "You must claim it in the app within 30 days of it being issued — about 40 days after your deposit. This is derived from the two stated windows, so verify live terms." },
+          { label: "Earliest you can sell the shares", value: null, note: "Not stated in the verified Oct 2026 terms — check Webull's live terms before assuming any date." },
+          { label: "Earliest you can withdraw cash", value: null, note: "Not stated in the verified Oct 2026 terms — check Webull's live terms. Do not assume Robinhood's 3-day / 30-day windows apply here." },
+        ],
+        explanation:
+          "Deposit at least $100 within 30 days of signing up and your fractional shares post within about 10 days. You then have 30 days from issue to claim them in the app. The verified terms do not state a sell date or a cash-withdrawal date for these shares, so this calculator does not invent one.",
+        warnings: [
+          "Figure conflict: the typical referrer reward is ~$3 in fractional shares, but some sources describe up to 20 free stocks. The ~$3 figure is the consistent one in the research — verify live terms.",
+          "Prediction-markets-only signups do NOT trigger the referral — you must open a standard brokerage account and deposit. Joint, IRA, and entity accounts are excluded.",
+          "Your deposit must be at least $100 and land within 30 days of signup.",
+        ],
+      };
+    },
+  },
+
+  underdog: {
+    name: "Underdog",
+    shortName: "Underdog",
+    reward: "$10 in bonus entries (plus a 1-in-1,000 shot at a $2,000 jackpot).",
+    qualifyingLabel: "Date you deposited $10",
+    referralUrl: "https://play.underdogsports.com/vgwg/oe6wffo1",
+    referralLabel: "Sign up for Underdog through this referral link",
+    compute(q) {
+      const credited = addDays(q, 3);
+      return {
+        rows: [
+          { label: "What you earn", value: this.reward, kind: "text" },
+          { label: "Bonus entries credited by", value: fmtDate(credited), note: "Credited ~72 hours after your $10 deposit (several guides add: and playing once)." },
+          { label: "Entries expire", value: fmtDate(addDays(credited, 14)), note: "14 days after they are credited — about 17 days after your deposit. Unused entries are gone after that." },
+          { label: "Earliest you can withdraw cash", value: null, note: "Never. Bonus entries are not cash and cannot be withdrawn — they can only be played. This offer never becomes money in your bank account." },
+          { label: "Claim deadline", value: "No separate claim step stated", note: "The entries are credited automatically; the deadline that matters is the 14-day expiry." },
+        ],
+        explanation:
+          "Your $10 in bonus entries lands about 3 days after your $10 deposit, and you have 14 days from then to play them. They are entries, not cash: you can use them to enter contests, but you can never withdraw them directly. Only winnings from contests you enter with them can become cash.",
+        warnings: [
+          "This $10 is the referrer-side bonus-entries reward. The friend's separate welcome offer (commonly Play $5, Get $50 in bonus entries) is a different offer.",
+          "California: no Underdog sportsbook — drafts, Best Ball, Champions, and Predict only. You must be 18+. If gambling stops being fun, call 1-800-GAMBLER.",
+          "Pick'em availability in California is contested across sources — this calculator makes no claim either way. Check inside the app.",
+        ],
+      };
+    },
+  },
+
+  polymarket: {
+    name: "Polymarket US",
+    shortName: "Polymarket",
+    reward: "$25 in trading credit (after a $10 deposit).",
+    qualifyingLabel: "Date you deposited $10",
+    referralUrl: "https://polymarket.us/join/stackbundlez",
+    referralLabel: "Sign up for Polymarket US through this referral link",
+    compute(q) {
+      return {
+        rows: [
+          { label: "What you earn", value: this.reward, kind: "text" },
+          { label: "Trading credit lands by", value: fmtDate(addDays(q, 7)), note: "Added within ~7 days of qualifying." },
+          { label: "Credit expires", value: null, note: "Varies by campaign — sources conflict on the expiry length and no single length is verified. Check the live campaign terms for your credit." },
+          { label: "Earliest you can withdraw cash", value: null, note: "Never directly. The credit is trading-only and cannot be withdrawn as cash. It must be traded first — only proceeds above the credit from those trades may be withdrawable, per live terms." },
+          { label: "Claim deadline", value: "No separate claim step stated", note: "The credit is added automatically within ~7 days; the deadline that matters is the campaign expiry (see above)." },
+        ],
+        explanation:
+          "Deposit $10 and a $25 trading credit is added to your account within about 7 days. The credit itself is not cash and can never be withdrawn — you have to trade with it, and only the proceeds above the credit from those trades may become withdrawable. How long the credit lasts depends on the campaign, and sources disagree on the length, so this calculator does not state an expiry date.",
+        warnings: [
+          "Figure conflict: the credit's expiry length differs across sources — no single expiry is verified. Do not rely on any one number; check the live campaign terms.",
+          "Up to 50 referrals ($1,250 total) per referrer.",
+          "This is the US refer-a-friend program. It is separate from Polymarket's fee-share program, which needs $10,000 of lifetime trading volume before it pays anything.",
+        ],
+      };
+    },
+  },
+};
+
+/**
+ * Compute the cash-out timeline for a platform and a qualifying date.
+ * Returns { platform, qualified, rows, explanation, warnings, referralUrl,
+ * referralLabel } or { error } for a bad platform/date.
+ */
+function compute(platformKey, iso) {
+  const p = PLATFORMS[platformKey];
+  if (!p) return { error: `Unknown platform: ${platformKey}` };
+  const q = parseDate(iso);
+  if (!q) return { error: `Invalid date: ${iso || "(empty)"}. Use YYYY-MM-DD.` };
+  if (q.getTime() > new Date().setHours(0, 0, 0, 0)) {
+    return { error: "That date is in the future. Use the date you already qualified, or “I signed up today”." };
+  }
+  const result = p.compute(q);
+  return {
+    platform: p.name,
+    platformKey,
+    qualified: fmtDate(q),
+    qualifiedIso: isoDate(q),
+    rows: result.rows,
+    explanation: result.explanation,
+    warnings: result.warnings,
+    referralUrl: p.referralUrl,
+    referralLabel: p.referralLabel,
+    qualifyingLabel: p.qualifyingLabel,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Browser wiring (only runs when a document exists)
+// ---------------------------------------------------------------------------
+if (typeof document !== "undefined") {
+  document.addEventListener("DOMContentLoaded", () => {
+    const dateInput = document.getElementById("qualify-date");
+    const resultsEl = document.getElementById("results");
+    const errorEl = document.getElementById("form-error");
+    dateInput.value = todayIso();
+    dateInput.max = todayIso();
+
+    function selectedPlatform() {
+      const checked = document.querySelector('input[name="platform"]:checked');
+      return checked ? checked.value : null;
+    }
+
+    function render(result) {
+      errorEl.textContent = "";
+      errorEl.hidden = true;
+      const rowsHtml = result.rows
+        .map((r) => {
+          const value = r.value === null
+            ? `<span class="no-date">No fixed date — see note</span>`
+            : `<strong>${r.value}</strong>`;
+          return `<div class="row"><div class="row-label">${r.label}</div><div class="row-value">${value}${r.note ? `<div class="row-note">${r.note}</div>` : ""}</div></div>`;
+        })
+        .join("");
+      const warningsHtml = result.warnings
+        .map((w) => `<li>${w}</li>`)
+        .join("");
+      resultsEl.innerHTML = `
+        <h2>${result.platform} — your cash-out timeline</h2>
+        <p class="qualified">Qualifying date: <strong>${result.qualified}</strong> (${result.qualifyingLabel.toLowerCase()}).</p>
+        <div class="timeline">${rowsHtml}</div>
+        <h3>What this means, plainly</h3>
+        <p>${result.explanation}</p>
+        <h3>Conflicts and catches — read these</h3>
+        <ul class="warnings">${warningsHtml}</ul>
+        <p class="referral"><a href="${result.referralUrl}" rel="sponsored">${result.referralLabel}</a></p>
+        <p class="verify">Verify live terms before acting — referral terms change often, and this calculator uses terms verified in October 2026. This page links to referral offers; the maker may earn a commission if you sign up through a referral link.</p>`;
+      resultsEl.hidden = false;
+      resultsEl.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function calculate() {
+      const platform = selectedPlatform();
+      if (!platform) {
+        errorEl.textContent = "Pick a platform first.";
+        errorEl.hidden = false;
+        return;
+      }
+      const result = compute(platform, dateInput.value);
+      if (result.error) {
+        errorEl.textContent = result.error;
+        errorEl.hidden = false;
+        resultsEl.hidden = true;
+        return;
+      }
+      render(result);
+    }
+
+    document.getElementById("calculate").addEventListener("click", calculate);
+    document.getElementById("today-btn").addEventListener("click", () => {
+      dateInput.value = todayIso();
+      calculate();
+    });
+    document.querySelectorAll('input[name="platform"]').forEach((r) =>
+      r.addEventListener("change", () => {
+        document.getElementById("qualify-label").textContent = PLATFORMS[r.value].qualifyingLabel + ":";
+        if (!resultsEl.hidden) calculate();
+      }),
+    );
+    // Keep the date label in sync with the initially selected platform.
+    document.getElementById("qualify-label").textContent =
+      PLATFORMS[selectedPlatform()].qualifyingLabel + ":";
+  });
+}
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = { compute, parseDate, addDays, addBusinessDays, fmtDate, isoDate, todayIso, PLATFORMS };
+}
+
+</script>
+</body>
+</html>

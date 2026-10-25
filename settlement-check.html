@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Settlement Eligibility Quick-Check — Could Any of These Settlements Fit You?</title>
+<meta name="description" content="Answer four quick questions and see which of ten class-action settlements closing soon might fit you — with deadlines, proof needed, and the official filing link. Never a promise of eligibility: always check the official settlement site before filing.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<nav aria-label="Site">
+<a href="index.html">Home</a>
+<a href="robinhood-referral.html">Robinhood Referral</a>
+<a href="webull-vs-robinhood.html">Webull vs Robinhood</a>
+<a href="underdog-california.html">Underdog in California</a>
+<a href="polymarket-credit.html">Polymarket Credit</a>
+<a href="prediction-markets-compared.html">Prediction Markets Compared</a>
+<a href="underdog-refer-a-friend.html">Underdog Refer-a-Friend</a>
+<a href="prediction-markets-beginners.html">Prediction Markets Beginners</a>
+<a href="free-offers-ranked.html">Free Offers Ranked</a>
+<a href="bounties.html">Live Agent Bounties</a>
+<a href="webull-referral-explained.html">Webull Referral Explained</a>
+<a href="polymarket-feeshare-vs-referral.html">Polymarket Fee-Share vs Referral</a>
+<a href="underdog-predict-explained.html">Underdog Predict Explained</a>
+<a href="cashout-calculator.html">Cash-Out Calculator</a>
+<a href="referral-estimator.html">Reward Estimator</a>
+<a href="settlement-check.html">Settlement Check</a>
+<a href="underdog-best-ball.html">Underdog Best Ball</a>
+<a href="referrals-to-100.html">Referrals to $100</a>
+<a href="referral-didnt-arrive.html">Bonus Didn't Arrive</a>
+</nav>
+<h1>Settlement Eligibility Quick-Check</h1>
+<p class="tagline">Ten class-action settlements close between October 27 and November 29, 2026. Answer four questions and see which ones <strong>might</strong> fit you — this tool never promises eligibility. <strong>Always check the official settlement site before filing.</strong></p>
+</header>
+<main>
+<div class="disclosure" role="note">
+<p><strong>Disclosure:</strong> This page is not legal advice and does not promise you are eligible for any settlement. Settlement administrators decide eligibility on the official site's rules, not this page's. Settlement data checked October 25, 2026; deadlines and terms change. Class actions typically pay 6–18 months after filing — this is 2027 money, not fast cash.</p>
+</div>
+
+<section class="tool-box" aria-label="Settlement check">
+<div class="field-row">
+<label for="state">1. Which state are you in?</label>
+<select id="state">
+<option value="CA">California</option>
+<option value="US">Another US state</option>
+<option value="nonUS">Outside the United States</option>
+</select>
+</div>
+<div class="field-row">
+<label for="event">2. What happened to you?</label>
+<select id="event">
+<option value="amn">I spoke with a doctor through an AMN language interpreter</option>
+<option value="tuccori">I bought a home and a brokerage commission was paid</option>
+<option value="highland">I got a data-breach notice from Highland Health Systems</option>
+<option value="finwise">I got a data-breach notice from FinWise / American First Finance</option>
+<option value="bestway">I bought a Bestway or Coleman Power Steel pool (48&Prime; or taller)</option>
+<option value="transunion">I got a notice about a bankruptcy remark on my TransUnion report</option>
+<option value="fairchild">I was a patient at Fairchild Medical Center (Yreka, CA)</option>
+<option value="levoit">I bought a Levoit air purifier or replacement filter</option>
+<option value="none">None of these happened to me</option>
+</select>
+</div>
+<div class="field-row" id="levoit-row" hidden>
+<label><input type="checkbox" id="levoit-direct"> I bought it directly from levoit.com or the Levoit app</label>
+<p class="hint">Direct levoit.com/app buyers are excluded from this settlement (arbitration waiver).</p>
+</div>
+<div class="field-row">
+<label for="event-date">3. When did it happen? (approximate is fine)</label>
+<input type="date" id="event-date">
+<p class="hint">Used only to check date windows, e.g. AMN covers Dec 2022–Aug 2026 and Levoit covers Aug 29, 2019–Aug 4, 2023. Leave blank if you are not sure.</p>
+</div>
+<div class="field-row">
+<label for="proof">4. Do you have proof or a notice?</label>
+<select id="proof">
+<option value="yes">Yes — I have the document / notice / receipt</option>
+<option value="notice">I have a notice with a login ID / PIN / claim number</option>
+<option value="no">No proof and no notice</option>
+<option value="unsure">Not sure</option>
+</select>
+</div>
+<div class="buttons">
+<button type="button" id="check">Check which settlements might fit</button>
+</div>
+<p id="form-error" class="error" hidden></p>
+</section>
+
+<section id="results" class="tool-box results" hidden aria-live="polite"></section>
+
+<section>
+<h2>All ten settlements at a glance</h2>
+<table>
+<thead><tr><th>Settlement</th><th>Deadline</th><th>Payout</th><th>Proof needed</th></tr></thead>
+<tbody>
+<tr><td>AMN Healthcare — CA privacy</td><td>Oct 27, 2026</td><td>Not stated in source research</td><td>No — register to receive a Class Member ID, then file</td></tr>
+<tr><td>Homebuyer antitrust — Tuccori v. At World Properties</td><td>Oct 27, 2026</td><td>Varies by claim</td><td>Yes — closing/HUD statement</td></tr>
+<tr><td>Highland Health — data breach</td><td>Oct 28, 2026</td><td>~$85 no-proof tier</td><td>Login ID + PIN from the notice</td></tr>
+<tr><td>FinWise Bank — data breach</td><td>Oct 29, 2026</td><td>CA residents up to 2&times; cash payment</td><td>Unique ID + PIN from the notice</td></tr>
+<tr><td>Bestway / Coleman pools</td><td>Oct 30, 2026</td><td>$40, one per household</td><td>No — $40 with no receipt</td></tr>
+<tr><td>TransUnion bankruptcy remark — Brooks</td><td>Oct 30, 2026</td><td>$100 automatic for the No-Bankruptcy group; filing unlocks ~$1,000; Aged Bankruptcy group must file for ~$350</td><td>Filing needs the Claim Number + PIN</td></tr>
+<tr><td>Fairchild Medical Center — pixel tracking</td><td>Nov 2, 2026</td><td>$25 cash, no proof, + 1 year CyEx Privacy Shield Pro</td><td>Login ID + PIN from the postcard</td></tr>
+<tr><td>Levoit air purifiers — Sen v. Vesync</td><td>Nov 3, 2026</td><td>$10 digital payment</td><td>Yes — proof of purchase showing the original purchase date</td></tr>
+<tr><td>Dr. Squatch — settlement</td><td>Nov 27, 2026</td><td>Unknown — details not verified</td><td>Unknown — verify on the official site</td></tr>
+<tr><td>Equifax — hard-inquiry settlement</td><td>Nov 29, 2026</td><td>Unknown — details not verified</td><td>Unknown — verify on the official site</td></tr>
+</tbody>
+</table>
+<p><strong>Two of these (Dr. Squatch and Equifax) are flagged "details not verified"</strong> — their details were never verified in the source research. Do not file on the basis of this page alone; verify on the official settlement site first.</p>
+<p>Settlement data checked October 25, 2026. Deadlines pass fast — if a deadline has already passed, the settlement is closed and this page will say so in your result.</p>
+<p><em>This tool runs entirely in your browser: it makes no network requests and stores nothing. It is not legal advice.</em></p>
+</section>
+</main>
+<footer>
+<p>Disclosure: I earn a commission if you sign up through my link. Offers checked October 2026; terms change — verify live terms before signing up.</p>
+<p><a href="index.html">Home</a> · <a href="robinhood-referral.html">Robinhood</a> · <a href="webull-vs-robinhood.html">Webull vs Robinhood</a> · <a href="underdog-california.html">Underdog in California</a> · <a href="polymarket-credit.html">Polymarket</a> · <a href="prediction-markets-compared.html">Prediction Markets Compared</a> · <a href="underdog-refer-a-friend.html">Underdog Refer-a-Friend</a> · <a href="prediction-markets-beginners.html">Prediction Markets Beginners</a> · <a href="free-offers-ranked.html">Free Offers Ranked</a> · <a href="bounties.html">Live Agent Bounties</a> · <a href="webull-referral-explained.html">Webull Referral</a> · <a href="polymarket-feeshare-vs-referral.html">Polymarket Fee-Share</a> · <a href="underdog-predict-explained.html">Underdog Predict</a> · <a href="cashout-calculator.html">Cash-Out Calculator</a> · <a href="referral-estimator.html">Reward Estimator</a> · <a href="settlement-check.html">Settlement Check</a> · <a href="underdog-best-ball.html">Best Ball</a> · <a href="referrals-to-100.html">Referrals to $100</a> · <a href="referral-didnt-arrive.html">Bonus Didn't Arrive</a></p>
+</footer>
+<script>
+"use strict";
+/* Settlement quick-check — data copied from ~/workspace/income-plan/x402-service-deadlines/deadlines.json
+   (checked 2026-10-25). Settlements only; found-money leads are not in scope here.
+   NEVER promises eligibility — every result says to check the official site. */
+
+const SETTLEMENTS = [
+  { id: "amn", name: "AMN Healthcare — CA privacy", deadline: "2026-10-27", payout: "Not stated in source research", proof: "No — two-step: register to receive a Class Member ID by email, then file", filingLink: "https://AMNCIPASettlement.com", filingNote: "$4.5M settlement, CA-only.", state: "CA", verified: true,
+    match(a) { if (a.event !== "amn") return null; if (a.state !== "CA") return { why: "This settlement is California-only, and you said you are not in California." }; if (a.date && (a.date < "2022-12-01" || a.date > "2026-08-31")) return { why: "The AMN class covers interpreter calls from December 2022 through August 2026 — your date falls outside that window." }; return { ok: true }; } },
+  { id: "tuccori", name: "Homebuyer antitrust — Tuccori v. At World Properties", deadline: "2026-10-27", payout: "Varies by claim", proof: "YES — closing/HUD statement showing address, date, price, commissions", filingLink: null, filingNote: "$120.3M settlement. No direct filing URL in the source research — search the official settlement site for \u2018Tuccori v. At World Properties\u2019. Proof is required; dig out the closing statement first.", state: "US", verified: true,
+    match(a) { if (a.event !== "tuccori") return null; if (a.proof === "no") return { why: "This settlement requires proof — a closing/HUD statement showing the address, date, price, and commissions. Without it, the claim cannot be filed." }; return { ok: true, note: "Class periods start in 2017–2019 depending on the state — check the official settlement site for your state's class period." }; } },
+  { id: "highland", name: "Highland Health — data breach", deadline: "2026-10-28", payout: "~$85 no-proof tier", proof: "Login ID + PIN from the notice", filingLink: null, filingNote: "File at the official settlement site named in your breach notice.", state: "US", verified: true,
+    match(a) { if (a.event !== "highland") return null; if (a.proof === "no") return { why: "You need the Login ID + PIN from the breach notice to file. Check your mail/email for the Highland Health notice (July 2023 breach)." }; return { ok: true }; } },
+  { id: "finwise", name: "FinWise Bank — data breach", deadline: "2026-10-29", payout: "CA residents up to 2x cash payment", proof: "Unique ID + PIN from the notice", filingLink: null, filingNote: "File at the official settlement site named in your breach notice.", state: "US", verified: true,
+    match(a) { if (a.event !== "finwise") return null; if (a.proof === "no") return { why: "You need the Unique ID + PIN from the breach notice to file. Check for the FinWise / American First Finance notice (May 2024 incident)." }; return { ok: true }; } },
+  { id: "bestway", name: "Bestway / Coleman pools", deadline: "2026-10-30", payout: "$40, one per household", proof: "No — $40 with no receipt", filingLink: "https://PoolSettlementBW.com", filingNote: null, state: "US", verified: true,
+    match(a) { if (a.event !== "bestway") return null; if (a.date && (a.date < "2008-01-01" || a.date > "2024-12-31")) return { why: "This settlement covers pools bought between 2008 and 2024 — your date falls outside that window." }; return { ok: true }; } },
+  { id: "transunion", name: "TransUnion bankruptcy remark — Brooks", deadline: "2026-10-30", payout: "$100 automatic for the No-Bankruptcy group; filing unlocks ~$1,000; Aged Bankruptcy group must file for ~$350", proof: "Filing needs the Claim Number + PIN", filingLink: "https://BrooksBankruptcyClassAction.com", filingNote: "Check which group your notice puts you in before deciding to file.", state: "US", verified: true,
+    match(a) { if (a.event !== "transunion") return null; if (a.proof === "no") return { why: "Filing needs the Claim Number + PIN from your notice. (The $100 No-Bankruptcy payment is automatic if you got the notice — no filing needed for that tier.)" }; return { ok: true, note: "Check which group your notice puts you in before deciding to file." }; } },
+  { id: "fairchild", name: "Fairchild Medical Center — pixel tracking", deadline: "2026-11-02", payout: "$25 cash, no proof, + 1 year CyEx Privacy Shield Pro", proof: "Login ID + PIN from the postcard (CyEx enrollment code)", filingLink: "https://FairchildDataSettlement.com/form/claim", filingNote: "Final approval hearing was Oct 15, 2026; ruling not yet posted as of Oct 20 — verify the site is still accepting claims before filing.", state: "CA", verified: true,
+    match(a) { if (a.event !== "fairchild") return null; if (a.state !== "CA") return { why: "This settlement covers about 1,000 California citizens whose information Fairchild disclosed — it is a closed list and every member was mailed a postcard notice." }; return { ok: true }; } },
+  { id: "levoit", name: "Levoit air purifiers — Sen v. Vesync", deadline: "2026-11-03", payout: "$10 digital payment (reduced pro-rata only if valid claims exceed the $15M cap)", proof: "YES — proof of purchase showing the original purchase date, every claim", filingLink: "https://LAPSettlement.com", filingNote: "Buyers who purchased directly from levoit.com/app are EXCLUDED (arbitration waiver). Fairness hearing Feb 17, 2027 — payout is 2027 money.", state: "US", verified: true,
+    match(a) { if (a.event !== "levoit") return null; if (a.levoitDirect) return { why: "Buyers who purchased directly from levoit.com or the Levoit app are excluded from this settlement (arbitration waiver)." }; if (a.date && (a.date < "2019-08-29" || a.date > "2023-08-04")) return { why: "This settlement covers Levoit Core or EverestAir purifiers/filters bought in the US between Aug 29, 2019 and Aug 4, 2023 — your date falls outside that window." }; if (a.proof === "no") return { why: "This settlement requires proof of purchase showing the original purchase date, for every claim. Without it, the claim cannot be filed." }; return { ok: true }; } },
+];
+
+const UNVERIFIED = [
+  { name: "Dr. Squatch — settlement", deadline: "2026-11-27" },
+  { name: "Equifax — hard-inquiry settlement", deadline: "2026-11-29" },
+];
+
+function fmtDeadline(iso) {
+  const d = new Date(Number(iso.slice(0, 4)), Number(iso.slice(5, 7)) - 1, Number(iso.slice(8, 10)));
+  return d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric" });
+}
+
+function check(answers) {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const matches = [];
+  const blocked = [];
+  if (answers.state === "nonUS" || answers.event === "none") {
+    return { matches: [], blocked: [], noneReason: answers.state === "nonUS"
+      ? "All ten settlements in this check are for people in the United States. If you live outside the US, none of them fit."
+      : "None of the ten settlements matches what you described. If something else happened to you — a different breach, a different purchase — it may belong to a settlement not listed here; the official settlement search sites are the place to check." };
+  }
+  for (const s of SETTLEMENTS) {
+    const r = s.match(answers);
+    if (!r) continue;
+    const dl = new Date(Number(s.deadline.slice(0, 4)), Number(s.deadline.slice(5, 7)) - 1, Number(s.deadline.slice(8, 10)));
+    if (dl < today) { blocked.push({ name: s.name, why: "Deadline passed (" + fmtDeadline(s.deadline) + ") — this settlement is closed." }); continue; }
+    if (r.ok) matches.push({ s, note: r.note || null });
+    else blocked.push({ name: s.name, why: r.why });
+  }
+  return { matches, blocked, noneReason: null };
+}
+
+if (typeof document !== "undefined") {
+  document.addEventListener("DOMContentLoaded", () => {
+    const eventSel = document.getElementById("event");
+    const levoitRow = document.getElementById("levoit-row");
+    const resultsEl = document.getElementById("results");
+    const errorEl = document.getElementById("form-error");
+    eventSel.addEventListener("change", () => { levoitRow.hidden = eventSel.value !== "levoit"; });
+    document.getElementById("check").addEventListener("click", () => {
+      const answers = {
+        state: document.getElementById("state").value,
+        event: eventSel.value,
+        date: document.getElementById("event-date").value || null,
+        proof: document.getElementById("proof").value,
+        levoitDirect: document.getElementById("levoit-direct").checked,
+      };
+      const result = check(answers);
+      errorEl.textContent = "";
+      errorEl.hidden = true;
+      let html = "";
+      if (result.noneReason) {
+        html += `<h2>No match from your answers</h2><p>${result.noneReason}</p>`;
+      } else if (result.matches.length === 0) {
+        html += `<h2>No settlement fits from your answers</h2><p>Based on what you entered, none of the ten settlements looks like a fit. That is not a final answer — class membership turns on details this short check cannot see. If you received a notice or letter about a settlement, follow the instructions on that notice.</p>`;
+      } else {
+        html += `<h2>${result.matches.length} settlement${result.matches.length > 1 ? "s" : ""} might fit — check the official site before filing</h2>
+        <p>This is a <strong>possible</strong> match, not a promise of eligibility. The settlement administrator decides eligibility on the official site's rules.</p>`;
+        for (const m of result.matches) {
+          const s = m.s;
+          html += `<div class="match"><h3>${s.name}</h3>
+          <p><strong>Deadline:</strong> ${fmtDeadline(s.deadline)} &nbsp;·&nbsp; <strong>Payout:</strong> ${s.payout}</p>
+          <p><strong>Proof needed:</strong> ${s.proof}</p>
+          ${s.filingLink ? `<p><strong>File at:</strong> <a href="${s.filingLink}">${s.filingLink}</a></p>` : `<p><strong>Where to file:</strong> ${s.filingNote}</p>`}
+          ${s.filingNote && s.filingLink ? `<p>${s.filingNote}</p>` : ""}
+          ${m.note ? `<p>${m.note}</p>` : ""}</div>`;
+        }
+      }
+      if (result.blocked.length) {
+        html += `<h3>Looked at, but does not fit on your answers</h3><ul class="warnings">` +
+          result.blocked.map((b) => `<li><strong>${b.name}:</strong> ${b.why}</li>`).join("") + `</ul>`;
+      }
+      html += `<h3>Two more deadlines we cannot verify yet</h3>
+      <div class="match unverified"><p><strong>Dr. Squatch — settlement</strong> (deadline Nov 27, 2026) and <strong>Equifax — hard-inquiry settlement</strong> (deadline Nov 29, 2026): <strong>details not verified</strong> in the source research. Payout, proof, and eligibility are all unknown. Do not file on the basis of this page — verify on the official settlement site first.</p></div>
+      <p class="verify">Check the official settlement site before filing — settlement administrators decide eligibility, not this page. Class actions typically pay 6–18 months after filing. This tool is not legal advice.</p>`;
+      resultsEl.innerHTML = html;
+      resultsEl.hidden = false;
+      resultsEl.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+}
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = { check, SETTLEMENTS, UNVERIFIED, fmtDeadline };
+}
+</script>
+</body>
+</html>
