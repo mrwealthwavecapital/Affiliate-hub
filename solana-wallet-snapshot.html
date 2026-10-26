@@ -81,9 +81,28 @@
 <li><strong>SOL balance</strong> — the wallet's SOL balance (lamports converted to SOL).</li>
 <li><strong>Token accounts</strong> — every SPL token account the wallet owns, with the token mint and the balance.</li>
 <li><strong>Token count</strong> — how many different tokens the wallet holds.</li>
+<li><strong>Slot and fetch time</strong> — every figure carries the Solana slot it was read at and the UTC time it was fetched, so a later disagreement is about staleness, not arithmetic.</li>
 </ul>
 <p><strong>Verified reference data:</strong> the wallet used for our WURK agent account (<code>BmqGEWHLhccaA79bewkNVayVBwPrbnwFvbfnjP5evi85</code>) held 0 SOL and 0 token accounts when checked on October 25, 2026 — a real result, and the one this tool's example button shows.</p>
 <p class="hint"><strong>What it cannot check:</strong> token names or dollar values. Mints are shown as addresses because this tool does no registry lookup, and it does not price anything — a large balance of a token nobody wants is still worth nothing. The public Solana RPC also rate-limits (HTTP 429): if it does, this page waits and retries a few times, and says so honestly. If it still fails, wait a minute and try again.</p>
+</section>
+
+<section>
+<h2>Sample snapshot — what a result looks like</h2>
+<p>This is a real snapshot of a public wallet we do not control — the wallet used for our WURK agent account (<code>BmqGEWHLhccaA79bewkNVayVBwPrbnwFvbfnjP5evi85</code>). Run the checker above on any wallet and you get exactly this shape, with the slot and fetch time behind every figure:</p>
+<table>
+<tbody>
+<tr><td>Wallet</td><td>BmqGEWHLhccaA79bewkNVayVBwPrbnwFvbfnjP5evi85</td><td></td></tr>
+<tr><td>SOL balance</td><td>0 SOL (0 lamports)</td><td></td></tr>
+<tr><td>Slot — SOL balance</td><td>461,468,318</td><td></td></tr>
+<tr><td>SPL token accounts</td><td>0</td><td></td></tr>
+<tr><td>Slot — SPL token accounts</td><td>461,468,325</td><td></td></tr>
+<tr><td>Token-2022 accounts</td><td>0</td><td></td></tr>
+<tr><td>Slot — Token-2022 accounts</td><td>461,468,331</td><td></td></tr>
+<tr><td>Fetched at (UTC)</td><td>2026-10-26T00:55:21Z</td><td></td></tr>
+</tbody>
+</table>
+<p class="hint">Every figure carries its slot and fetch time — so if a number changes later, the disagreement is about staleness, not arithmetic. Confirm it yourself on <a href="https://solscan.io/account/BmqGEWHLhccaA79bewkNVayVBwPrbnwFvbfnjP5evi85" target="_blank" rel="noopener">Solscan</a>.</p>
 </section>
 
 <section class="tool-box" aria-label="Check a wallet">
@@ -249,8 +268,10 @@
       var bal = await solCall('getBalance', [wallet]);
       var tokens = [];
       var tokenErr = null;
+      var splSlot = null, t22Slot = null;
       try {
         var spl = await solCall('getTokenAccountsByOwner', [wallet, { programId: SPL_PROGRAM }, { encoding: 'jsonParsed' }]);
+        if (spl.context && spl.context.slot != null) splSlot = spl.context.slot;
         (spl.value || []).forEach(function (acc) {
           var info = acc.account && acc.account.data && acc.account.data.parsed && acc.account.data.parsed.info;
           if (info && info.tokenAmount) tokens.push({ mint: info.mint, amount: info.tokenAmount.uiAmountString, decimals: info.tokenAmount.decimals });
@@ -258,12 +279,15 @@
       } catch (e) { tokenErr = e; }
       try {
         var t22 = await solCall('getTokenAccountsByOwner', [wallet, { programId: TOKEN2022_PROGRAM }, { encoding: 'jsonParsed' }]);
+        if (t22.context && t22.context.slot != null) t22Slot = t22.context.slot;
         (t22.value || []).forEach(function (acc) {
           var info = acc.account && acc.account.data && acc.account.data.parsed && acc.account.data.parsed.info;
           if (info && info.tokenAmount) tokens.push({ mint: info.mint, amount: info.tokenAmount.uiAmountString, decimals: info.tokenAmount.decimals });
         });
       } catch (e) { tokenErr = tokenErr || e; }
 
+      var fetchedAt = new Date().toISOString();
+      var balSlot = (bal.context && bal.context.slot != null) ? bal.context.slot : null;
       resultBody.innerHTML = '';
       row('Wallet', wallet, '');
       row('SOL balance (lamports)', String(bal.value), '');
@@ -272,6 +296,10 @@
       tokens.forEach(function (t) {
         row('Token ' + t.mint, t.amount + ' (decimals ' + t.decimals + ')', '');
       });
+      row('Slot — SOL balance', balSlot != null ? String(balSlot) : 'n/a', '');
+      row('Slot — SPL token accounts', splSlot != null ? String(splSlot) : 'n/a (read failed)', '');
+      row('Slot — Token-2022 accounts', t22Slot != null ? String(t22Slot) : 'n/a (read failed)', '');
+      row('Fetched at (UTC)', fetchedAt, '');
       resultEl.hidden = false;
       verdictEl.hidden = false;
       if (tokens.length === 0) {
@@ -284,7 +312,8 @@
       lastCheck = {
         wallet: wallet, solLamports: String(bal.value), sol: fmtSol(bal.value),
         tokens: tokens, tokenErr: tokenErr ? String(tokenErr.message || tokenErr) : null,
-        checkedAt: new Date().toISOString()
+        slotBalance: balSlot, slotSpl: splSlot, slotToken2022: t22Slot,
+        checkedAt: fetchedAt
       };
     } catch (e) {
       checkErrorEl.textContent = 'Could not read the wallet from Solana: ' + (e && e.message ? e.message : String(e));
@@ -304,6 +333,9 @@
     c.tokens.forEach(function (t) {
       lines.push('- Token ' + t.mint + ': ' + t.amount + ' (decimals ' + t.decimals + ')');
     });
+    lines.push('- Slot — SOL balance: ' + (c.slotBalance != null ? c.slotBalance : 'n/a'));
+    lines.push('- Slot — SPL token accounts: ' + (c.slotSpl != null ? c.slotSpl : 'n/a'));
+    lines.push('- Slot — Token-2022 accounts: ' + (c.slotToken2022 != null ? c.slotToken2022 : 'n/a'));
     lines.push('- RPC used: https://api.mainnet-beta.solana.com');
     lines.push('- Checked at: ' + c.checkedAt);
     lines.push('');

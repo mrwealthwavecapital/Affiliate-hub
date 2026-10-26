@@ -81,7 +81,7 @@
 <li><strong>Balance</strong> — the wallet's balance of that token (raw and human-readable, using the token's own decimals).</li>
 <li><strong>Total supply</strong> — the token's total supply from the contract.</li>
 <li><strong>Share of supply</strong> — the wallet's balance as a percentage of total supply.</li>
-<li><strong>Block</strong> — the latest BSC block the read was taken at.</li>
+<li><strong>Block and fetch time</strong> — the latest BSC block the read was taken at, and the UTC time it was fetched, so a later disagreement is about staleness, not arithmetic.</li>
 </ul>
 <p><strong>Verified reference data</strong> (from public audits of FlapJax payouts, October 2026): FLAPJAX total supply 44,444,444,444; the top 20 holders own 78.47% of supply at block 129,454,096 (two PancakeSwap V3 pools hold 57.75% combined — extremely concentrated). The FlapJax treasury held 834,038,663.16 FLAPJAX (1.8766% of supply) when checked on October 25, 2026.</p>
 <p class="hint"><strong>What it cannot check:</strong> holder rank. This tool shows one wallet's share of supply; it does not rank that wallet against all holders, and it does not check whether the token is worth anything — a large share of a token nobody wants is still worth nothing. A token contract that has no code at the address you paste is not a token at all, and this tool will say so.</p>
@@ -311,6 +311,7 @@
       else if (balanceRaw * 1000n >= supplyRaw) shareVerdict = 'small holder (0.1% or more of supply)';
       else shareVerdict = 'very small holder (under 0.1% of supply)';
 
+      var fetchedAt = new Date().toISOString();
       resultBody.innerHTML = '';
       row('Token contract', token, '');
       row('Wallet', wallet, '');
@@ -320,6 +321,7 @@
       row('Share of supply', share, shareVerdict);
       row('Token decimals', String(decimals) + ' (' + decimalsNote + ')', '');
       row('Block', String(blockNum) + ' (read via ' + blk.rpc + ')', '');
+      row('Fetched at (UTC)', fetchedAt, '');
       resultEl.hidden = false;
       verdictEl.hidden = false;
       if (balanceRaw === 0n) {
@@ -333,7 +335,7 @@
         token: token, wallet: wallet, balanceRaw: bal.result, balance: balanceFmt,
         supplyRaw: sup.result, supply: supplyFmt, share: share, shareVerdict: shareVerdict,
         decimals: decimals, block: blockNum, rpc: blk.rpc,
-        checkedAt: new Date().toISOString()
+        checkedAt: fetchedAt
       };
     } catch (e) {
       checkErrorEl.textContent = 'Could not read the token from BNB Smart Chain: ' + (e && e.message ? e.message : String(e)) + '. Wait a minute and try again.';
