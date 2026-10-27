@@ -308,7 +308,7 @@
         if (String(lg.topics[0]).toLowerCase() !== TRANSFER_TOPIC0) continue;
         // A standard ERC-20 Transfer carries exactly 32 bytes of data (the amount).
         // Non-standard events with other data lengths are skipped, not parsed.
-        if (typeof lg.data !== 'string' || lg.data.length !== 130) continue;
+        if (typeof lg.data !== 'string' || lg.data.length !== 66) continue;
         transfers.push({
           from: addrFromTopic(lg.topics[1]),
           to: addrFromTopic(lg.topics[2]),
