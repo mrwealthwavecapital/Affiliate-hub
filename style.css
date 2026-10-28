@@ -47,6 +47,7 @@ button:hover { filter: brightness(0.94); }
 .verify { font-size: 0.85rem; color: #444; background: #fff8e1; border: 1px solid #e6c200; border-radius: 8px; padding: 0.6rem 0.75rem; }
 .tagline { font-size: 1.05rem; color: #444; }
 .match { border-left: 4px solid #0b5cab; padding-left: 0.75rem; margin: 1rem 0; }
+.tool-callout { background: #eef5ff; border-left: 4px solid #0b5cab; padding: 0.75rem 1rem; margin: 1rem 0; }
 .match.unverified { border-left-color: #b42318; }
 .match h3 { margin-top: 0; }
 @media (max-width: 640px) {
